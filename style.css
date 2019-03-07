@@ -1,0 +1,91 @@
+body {
+  color: rgb(84, 79, 85);
+  margin: 0;
+  font-family: 'Amatic SC', cursive;
+  
+  display: flex;
+  flex-direction: column;
+}
+
+
+section {
+  width: 100%;
+  margin: 0;
+  height: 100vh;
+  font-size: 40px;
+}
+
+#home-page {
+  background-color: rgba(149, 51, 167, 0.32);
+
+}
+
+@media (max-width: 480px) {
+  #home-page {
+    font-size: 30px;
+  }
+  
+  #contact-page article {
+    font-size: 20px;
+  }
+}
+
+#experience-page {
+  background-color: rgba(149, 51, 0, 0.32);
+}
+
+#contact-page {
+  background-color: rgba(149, 0, 0, 0.32);
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+article {
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  align-self: center;
+  border-radius: 50%;
+}
+
+nav {
+  /* The size of the text is throwing this off center */
+  display: flex;
+  width: 60%;
+  justify-content: space-around;
+  margin: auto;
+  font-size: 20px;
+  text-align: center;
+  height: 10%
+}
+
+#experience-examples {
+  display: flex;
+  height: 80%;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+a {
+  text-decoration-line: none;
+  color: rgb(84, 79, 85);
+}
+ul {
+  list-style-type: none;
+}
+li {
+  width: 33%;
+}
+
+h1 {
+  font-family: 'Fredericka the Great', cursive;
+}
+
+h2 {
+
+}
+
