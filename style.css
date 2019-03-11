@@ -2,7 +2,7 @@ body {
   color: rgb(84, 79, 85);
   margin: 0;
   font-family: 'Amatic SC', cursive;
-  
+
   display: flex;
   flex-direction: column;
 }
@@ -24,9 +24,13 @@ section {
   #home-page {
     font-size: 30px;
   }
-  
+
   #contact-page article {
     font-size: 20px;
+  }
+
+  aside h2 {
+    font-size: 30px;
   }
 }
 
@@ -34,9 +38,33 @@ section {
   background-color: rgba(149, 51, 0, 0.32);
 }
 
+#experience-examples {
+  display: flex;
+  height: 80%;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap:wrap;
+}
+
+#experience-examples aside{
+  width: 45%;
+  height: 45%;
+  background-color: rgba(149, 51, 0, 0.32);
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+aside p {
+  display:none;
+}
+
+
+
+
 #contact-page {
   background-color: rgba(149, 0, 0, 0.32);
-  
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -63,12 +91,6 @@ nav {
   height: 10%
 }
 
-#experience-examples {
-  display: flex;
-  height: 80%;
-  flex-direction: column;
-  justify-content: space-around;
-}
 
 a {
   text-decoration-line: none;
@@ -88,4 +110,3 @@ h1 {
 h2 {
 
 }
-
