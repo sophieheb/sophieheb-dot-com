@@ -6,3 +6,10 @@ $('.smooth').on('click', function() {
 
   return false;
 });
+
+//This needs to be done
+$('aside').on('click', (e) => {
+  console.log(e);
+  $('aside').children.css("display","block");
+
+})
