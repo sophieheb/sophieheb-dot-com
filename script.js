@@ -1,15 +1,22 @@
-$('.smooth').on('click', function() {
-  $.smoothScroll({
-    scrollElement: $('body'),
-    scrollTarget: '#' + this.id
+window.addEventListener('DOMContentLoaded', (event) => {
+
+  $('.smooth').on('click', function() {
+    $.smoothScroll({
+      scrollElement: $('body'),
+      scrollTarget: '#' + this.id
+    });
+
+    return false;
   });
 
-  return false;
-});
 
-//This needs to be done
-$('aside').on('click', (e) => {
-  console.log(e);
-  $('aside').children.css("display","block");
+  $('aside').on('click', function(){
+    if ($(this).hasClass('display_details')) {
+      $(this).removeClass('display_details')
+    }
+    else {
+      $(this).addClass('display_details')
+    }
+  })
 
 })
