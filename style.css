@@ -1,5 +1,5 @@
 body {
-  color: rgb(84, 79, 85);
+  color: #FAF6F6;
   margin: 0;
   font-family: 'Amatic SC', cursive;
 
@@ -11,13 +11,12 @@ body {
 section {
   width: 100%;
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
   font-size: 40px;
 }
 
 #home-page {
-  background-color: rgba(149, 51, 167, 0.32);
-
+  background-color: #CF8E80;
 }
 
 @media (max-width: 480px) {
@@ -35,35 +34,52 @@ section {
 }
 
 #experience-page {
-  background-color: rgba(149, 51, 0, 0.32);
+  background-color: #586862;
 }
 
 #experience-examples {
   display: flex;
-  height: 80%;
   flex-direction: row;
   justify-content: space-around;
   flex-wrap:wrap;
 }
 
 #experience-examples aside{
-  width: 45%;
-  height: 45%;
-  background-color: rgba(149, 51, 0, 0.32);
+  flex: 0 1 45%;
+
+  background-color: #CDCDCD;
   margin: 20px;
+  border-radius: 45px;
+
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  overflow: scroll;
 }
+
 aside p {
   display:none;
 }
 
+.display_details p {
+  display: block;
+
+  font-size: 20px;
+  margin: 3px;
+
+}
+
+#experience-examples h2 {
+  margin: 8px;
+  font-family: 'Fredericka the Great', cursive;
+}
 
 
 
 #contact-page {
-  background-color: rgba(149, 0, 0, 0.32);
+  background-color: #E3E4DB;
 
   display: flex;
   flex-direction: column;
