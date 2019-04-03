@@ -1,7 +1,7 @@
 body {
-  color: #FAF6F6;
+  color: #CFD0D4;
   margin: 0;
-  font-family: 'Amatic SC', cursive;
+font-family: 'Raleway', sans-serif;
 
   display: flex;
   flex-direction: column;
@@ -16,7 +16,8 @@ section {
 }
 
 #home-page {
-  background-color: #CF8E80;
+  background-color: #F5DB34;
+  color: rgb(84, 79, 85);
 }
 
 @media (max-width: 480px) {
@@ -34,22 +35,25 @@ section {
 }
 
 #experience-page {
-  background-color: #586862;
+  background-color: #E8BF94;
+  color: #E8BF94;
 }
 
 #experience-examples {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  flex-wrap:wrap;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 #experience-examples aside{
   flex: 0 1 45%;
 
-  background-color: #CDCDCD;
+  background-color: #FDDEDC;
   margin: 20px;
-  border-radius: 45px;
+
+  min-height: 400px;
+  max-width: 400px;
 
   display: flex;
   flex-direction: column;
@@ -73,13 +77,14 @@ aside p {
 
 #experience-examples h2 {
   margin: 8px;
-  font-family: 'Fredericka the Great', cursive;
+  font-family: 'Abel', sans-serif;
 }
 
 
 
 #contact-page {
-  background-color: #E3E4DB;
+  background-color: #241E4E;
+  color: #CFD0D4;
 
   display: flex;
   flex-direction: column;
@@ -91,13 +96,12 @@ article {
 }
 
 img {
-  max-width: 100%;
+  max-width: 60%;
   align-self: center;
   border-radius: 50%;
 }
 
 nav {
-  /* The size of the text is throwing this off center */
   display: flex;
   width: 60%;
   justify-content: space-around;
@@ -120,7 +124,7 @@ li {
 }
 
 h1 {
-  font-family: 'Fredericka the Great', cursive;
+  font-family: 'Abel', sans-serif;
 }
 
 h2 {

@@ -10,13 +10,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
   });
 
 
-  $('aside').on('click', function(){
-    if ($(this).hasClass('display_details')) {
+  $('aside').hover(
+    function(){
+      $(this).addClass('display_details')
+    },
+    function(){
       $(this).removeClass('display_details')
     }
-    else {
-      $(this).addClass('display_details')
-    }
-  })
+  )
 
 })
