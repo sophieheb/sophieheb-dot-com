@@ -16,69 +16,84 @@
 
   </head>
   <body>
-    <section id="home-page">
+    <figure id="top_circle"></figure>
+    <figure id="bottom_circle"></figure>
+    <section class="page">
       <a id="home" class="smooth"></a>
-      <nav>
-        <p><a href="#experience">Experience</a></p>
-        <p>👋</p>
-        <p><a href="#contact">Contact</a></p>
-      </nav>
-      <article>
-        <h1>Sophie Hebdidge</h1>
-        <h2>Developer // Educator // Mentor</h2>
-      </article>
+      <header>
+        <p class="page_title">Sophie Hebdidge</p>
+        <nav>
+            <p> <a class="about_link" href="#about">ABOUT</a> </p>
+            <p> | </p>
+            <p> <a class="services_link" href="#services">SERVICES</a></p>
+            <p> | </p>
+            <p> <a class="contact_link" href="#contact">CONTACT</a> </p>
+        </nav>
+      </header>
+      <main>
+        <h1>DEVELOPER |  EDUCATOR | MENTOR</h1>
+        <section id="images">
+          <section class="image" id="speaking1">
+            <!-- <img src="speaking.jpeg"/> -->
+          </section>
+          <section class="image" id="speaking2">
+            <!-- <img src="speaking2.jpg"/> -->
+          </section>
+        </section>
+        <p> I'm a freelance fullstack developer based in London UK, with experience in app & web development as well as python backend systems. When I'm not developing I spend time inspiring individuals and companies about the power of code and data in my capicity as an educator and a mentor.</p>
+      </main>
     </section>
-    <section id="contact-page">
+    <section class="page">
+      <a id="about" class="smooth"></a>
+      <header>
+        <nav>
+            <p> <a href="#home">HOME</a> </p>
+            <p> | </p>
+            <p> <a class="services_link" href="#services">SERVICES</a></p>
+            <p> | </p>
+            <p> <a class="contact_link" href="#contact">CONTACT</a> </p>
+        </nav>
+        <p class="page_title">About Me</p>
+      </header>
+      <!-- <main>
+        <h1>DEVELOPER |  EDUCATOR | MENTOR</h1>
+        <p> I'm a freelance fullstack developer based in London UK, with experience in app & web development as well as python backend systems. When I'm not developing I spend time inspiring individuals and companies <a class="about_link" href="#about">ABOUT</a> the power of code and data in my capicity as an educator and a mentor.</p>
+      </main> -->
+    </section>
+    <section class="page">
+      <a id="services" class="smooth"></a>
+      <header>
+        <p class="page_title">Services</p>
+        <nav>
+            <p><a href="#home">HOME</a></p>
+            <p> | </p>
+            <p> <a class="about_link" href="#about">ABOUT</a></p>
+            <p> | </p>
+            <p> <a class="contact_link" href="#contact">CONTACT</a> </p>
+        </nav>
+      </header>
+      <!-- <main>
+        <h1>DEVELOPER |  EDUCATOR | MENTOR</h1>
+        <p> I'm a freelance fullstack developer based in London UK, with experience in app & web development as well as python backend systems. When I'm not developing I spend time inspiring individuals and companies <a class="about_link" href="#about">ABOUT</a> the power of code and data in my capicity as an educator and a mentor.</p>
+      </main> -->
+    </section>
+    <section class="page">
       <a id="contact" class="smooth"></a>
-      <nav>
-        <p><a href="#home">Home</a></p>
-        <p>👋</p>
-        <p><a href="#experience">Experience</a></p>
-      </nav>
-      <img src="pic.png"/>
-      <article>
-        <h1>hello@sophieheb.com</h1>
-        <a href="twitter.com"><i class="fab fa-twitter"></i></a>
-        <a href="linkedin.com"><i class="fab fa-linkedin"></i></a>
-      </article>
+      <header>
+        <p class="page_title">Get in Touch</p>
+        <nav>
+            <p> <a href="#home">HOME</a> </p>
+            <p> | </p>
+            <p> <a class="about_link" href="#about">ABOUT</a></p>
+            <p> | </p>
+            <p> <a class="services_link" href="#services">SERVICES</a> </p>
+        </nav>
+      </header>
+      <!-- <main>
+        <h1>DEVELOPER |  EDUCATOR | MENTOR</h1>
+        <p> I'm a freelance fullstack developer based in London UK, with experience in app & web development as well as python backend systems. When I'm not developing I spend time inspiring individuals and companies <a class="about_link" href="#about">ABOUT</a> the power of code and data in my capicity as an educator and a mentor.</p>
+      </main> -->
     </section>
-    <section id="experience-page">
-      <a id="experience" class="smooth"></a>
-      <nav>
-        <p><a href="#home">Home</a></p>
-        <p>👋</p>
-        <p><a href="#contact">Contact</a></p>
-      </nav>
-      <article id="experience-examples">
-        <aside>
-          <h2>Project Kitchen Table</h2>
-          <p>I spent one year building a startup before leaving due to health reasons. I built a mobile app, on IOS and Android that users interacted with using their voice. We tested the app with over 1000 users.</p>
-          <p>Tech Stack: React Native, Python, AWS</p>
-          <p><a href="https://projectkitchentable.io" target="_blank">Visit</a></p>
-        </aside>
-        <aside>
-          <h2>Hacksy</h2>
-          <p>Hacksy is a chatbot that teaches users about cybersecurity.</p>
-          <p>Tech Stack: Ruby on Rails, MongoDB</p>
-          <p><a href="https://meethacksy.com" target="_blank">Visit</a></p>
-        </aside>
-        <aside>
-          <h2>Decoded</h2>
-          <p>Designing and delivering education programmes to corporate clients that inspire  them to the posibilities of technology.</p>
-          <p><a href="https://decoded.com" target="_blank">Visit</a></p>
-        </aside>
-        <aside>
-          <h2>Flatiron School</h2>
-          <p>Front-end Web Development Instructor teaching a 10 week evening course. Plus adhoc workshops and moderation of panels.</p>
-          <p><a href="https://flatironschool.com" target="_blank">Visit</a></p>
-        </aside>
-        <aside>
-          <h2>Speaking Engagements</h2>
-          <p>I have been speaking at conferences and meetups since 2016 on a range of topics from data and chatbots to women in tech.</p>
-          <p><a href="https://futureofstorytelling.org/speaker/sophie-hebdidge" target="_blank">FOST, NYC, 2017</a></p>
-          <p><a href="https://www.meetup.com/Messaging-Bots-London/events/254878658/" target="_blank">Messaging Bots meetup, London, 2018</a></p>
-        </aside>
-      </article>
-    </section>
+
   </body>
 </html>

@@ -1,5 +1,4 @@
 window.addEventListener('DOMContentLoaded', (event) => {
-
   $('.smooth').on('click', function() {
     $.smoothScroll({
       scrollElement: $('body'),
@@ -19,4 +18,226 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
   )
 
+  $('.home_link').on('click', function () {
+    $("body").addClass("blue")
+    $("body").removeClass("pink")
+    $("body").removeClass("yellow")
+    $("body").removeClass("beige")
+
+    $("#top_circle").addClass("beige")
+    $("#top_circle").removeClass("yellow")
+    $("#top_circle").removeClass("blue")
+    $("#top_circle").removeClass("pink")
+
+    $("#bottom_circle").addClass("yellow")
+    $("#bottom_circle").removeClass("beige")
+    $("#bottom_circle").removeClass("blue")
+    $("#bottom_circle").removeClass("pink")
+
+    $("header").addClass("pink")
+    $("header").removeClass("yellow")
+    $("header").removeClass("blue")
+    $("header").removeClass("beige")
+
+    $('#bottom_circle').css('left', '60%');
+    $('#top_circle').css('left', '-10%');
+
+
+  })
+
+  $('.about_link').on('click', function () {
+    $("body").addClass("beige")
+    $("body").removeClass("yellow")
+    $("body").removeClass("pink")
+    $("body").removeClass("blue")
+
+    $("#top_circle").addClass("pink")
+    $("#top_circle").removeClass("yellow")
+    $("#top_circle").removeClass("blue")
+    $("#top_circle").removeClass("beige")
+
+    $("#bottom_circle").addClass("yellow")
+    $("#bottom_circle").removeClass("beige")
+    $("#bottom_circle").removeClass("blue")
+    $("#bottom_circle").removeClass("pink")
+
+    $("header").addClass("yellow")
+    $("header").removeClass("beige")
+    $("header").removeClass("blue")
+    $("header").removeClass("pink")
+
+    $('#bottom_circle').css('left', '-10%');
+    $('#top_circle').css('left', '60%');
+
+  })
+
+  $('.services_link').on('click', function () {
+
+    $("body").addClass("beige")
+    $("body").removeClass("yellow")
+    $("body").removeClass("pink")
+    $("body").removeClass("blue")
+
+    $("#top_circle").addClass("pink")
+    $("#top_circle").removeClass("yellow")
+    $("#top_circle").removeClass("blue")
+    $("#top_circle").removeClass("beige")
+
+    $("#bottom_circle").addClass("yellow")
+    $("#bottom_circle").removeClass("beige")
+    $("#bottom_circle").removeClass("blue")
+    $("#bottom_circle").removeClass("pink")
+
+    $("header").addClass("yellow")
+    $("header").removeClass("beige")
+    $("header").removeClass("blue")
+    $("header").removeClass("pink")
+
+    $('#bottom_circle').css('left', '110%');
+    $('#top_circle').css('left', '-10%');
+
+  });
+
+  $('.contact_link').on('click', function () {
+    $("body").addClass("yellow")
+    $("body").removeClass("beige")
+    $("body").removeClass("blue")
+    $("body").removeClass("pink")
+
+    $("#top_circle").addClass("beige")
+    $("#top_circle").removeClass("yellow")
+    $("#top_circle").removeClass("blue")
+    $("#top_circle").removeClass("pink")
+
+    $("#bottom_circle").addClass("pink")
+    $("#bottom_circle").removeClass("beige")
+    $("#bottom_circle").removeClass("blue")
+    $("#bottom_circle").removeClass("yellow")
+
+    $("header").addClass("blue")
+    $("header").removeClass("yellow")
+    $("header").removeClass("beige")
+    $("header").removeClass("pink")
+
+    $('#bottom_circle').css('left', '60%');
+    $('#top_circle').css('left', '-10%');
+
+  })
 })
+
+$(window).scroll(function () {
+
+    var height = Math.max(document.body.scrollHeight,
+                          document.body.offsetHeight,
+                          document.documentElement.clientHeight,
+                          document.documentElement.scrollHeight,
+                          document.documentElement.offsetHeight);
+
+   if ($(this).scrollTop() < height*0.245) {
+      $("body").addClass("pink")
+      $("body").removeClass("beige")
+      $("body").removeClass("blue")
+      $("body").removeClass("yellow")
+
+      $("#top_circle").addClass("yellow")
+      $("#top_circle").removeClass("beige")
+      $("#top_circle").removeClass("blue")
+      $("#top_circle").removeClass("pink")
+
+      $("#bottom_circle").addClass("yellow")
+      $("#bottom_circle").removeClass("beige")
+      $("#bottom_circle").removeClass("blue")
+      $("#bottom_circle").removeClass("pink")
+
+      $("header").addClass("beige")
+      $("header").removeClass("yellow")
+      $("header").removeClass("blue")
+      $("header").removeClass("pink")
+
+      let topCirclePosition = moveCircle(0, height*0.25, 70, $(this).scrollTop(), -10, 1)
+      $('#top_circle').css('left', topCirclePosition + '%');
+
+      let bottomCirclePosition = moveCircle(0, height*0.25, 70, $(this).scrollTop(), 60, -1)
+      $('#bottom_circle').css('left', bottomCirclePosition + '%');
+   }
+   else if ($(this).scrollTop() < height*0.495) {
+      $("body").addClass("blue")
+      $("body").removeClass("pink")
+      $("body").removeClass("yellow")
+      $("body").removeClass("beige")
+
+      $("#top_circle").addClass("beige")
+      $("#top_circle").removeClass("yellow")
+      $("#top_circle").removeClass("blue")
+      $("#top_circle").removeClass("pink")
+
+      $("#bottom_circle").addClass("yellow")
+      $("#bottom_circle").removeClass("beige")
+      $("#bottom_circle").removeClass("blue")
+      $("#bottom_circle").removeClass("pink")
+
+      $("header").addClass("pink")
+      $("header").removeClass("yellow")
+      $("header").removeClass("blue")
+      $("header").removeClass("beige")
+
+      let topCirclePosition = moveCircle(height*0.25, height*0.5, 70, $(this).scrollTop(), 60, -1)
+      $('#top_circle').css('left', topCirclePosition + '%');
+
+      let bottomCirclePosition = moveCircle(height*0.25, height*0.5, 120, $(this).scrollTop(), -10, 1)
+      $('#bottom_circle').css('left', bottomCirclePosition + '%');
+   }
+   else if ($(this).scrollTop() < height*0.745) {
+      $("body").addClass("beige")
+      $("body").removeClass("yellow")
+      $("body").removeClass("pink")
+      $("body").removeClass("blue")
+
+      $("#top_circle").addClass("pink")
+      $("#top_circle").removeClass("yellow")
+      $("#top_circle").removeClass("blue")
+      $("#top_circle").removeClass("beige")
+
+      $("#bottom_circle").addClass("yellow")
+      $("#bottom_circle").removeClass("beige")
+      $("#bottom_circle").removeClass("blue")
+      $("#bottom_circle").removeClass("pink")
+
+      $("header").addClass("yellow")
+      $("header").removeClass("beige")
+      $("header").removeClass("blue")
+      $("header").removeClass("pink")
+
+      let bottomCirclePosition = moveCircle(height*0.5, height*0.75, 50, $(this).scrollTop(), 110, -1)
+      $('#bottom_circle').css('left', bottomCirclePosition + '%');
+
+   }
+   else if ($(this).scrollTop() >= height*0.745) {
+      $("body").addClass("yellow")
+      $("body").removeClass("beige")
+      $("body").removeClass("blue")
+      $("body").removeClass("pink")
+
+      $("#top_circle").addClass("beige")
+      $("#top_circle").removeClass("yellow")
+      $("#top_circle").removeClass("blue")
+      $("#top_circle").removeClass("pink")
+
+      $("#bottom_circle").addClass("pink")
+      $("#bottom_circle").removeClass("beige")
+      $("#bottom_circle").removeClass("blue")
+      $("#bottom_circle").removeClass("yellow")
+
+      $("header").addClass("blue")
+      $("header").removeClass("yellow")
+      $("header").removeClass("beige")
+      $("header").removeClass("pink")
+
+   }
+
+});
+
+function moveCircle(lowestScroll, maxScroll, pixelsToMove, currentScroll,  offset, multiplier){
+  let numberOfPixelsInEachMovementOfCircle = ((maxScroll-lowestScroll)/pixelsToMove)
+  return ((currentScroll-lowestScroll)*multiplier)/numberOfPixelsInEachMovementOfCircle + offset
+}
