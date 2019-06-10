@@ -7,11 +7,13 @@
     <meta name="viewport" content="width=device-width">
 
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Abel|Raleway" rel="stylesheet" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Molle:400i|Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6c6026efe8.js"></script>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://github.com/kswedberg/jquery-smooth-scroll/blob/master/jquery.smooth-scroll.min.js"></script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
     <script src="script.js"></script>
 
   </head>
@@ -32,13 +34,9 @@
       </header>
       <main>
         <h1>DEVELOPER |  EDUCATOR | MENTOR</h1>
-        <section id="images">
-          <section class="image" id="speaking1">
-            <!-- <img src="speaking.jpeg"/> -->
-          </section>
-          <section class="image" id="speaking2">
-            <!-- <img src="speaking2.jpg"/> -->
-          </section>
+        <section id="home-images">
+          <section class="image" id="speaking1"></section>
+          <section class="image" id="speaking2"></section>
         </section>
         <p> I'm a freelance fullstack developer based in London UK, with experience in app & web development as well as python backend systems. When I'm not developing I spend time inspiring individuals and companies about the power of code and data in my capicity as an educator and a mentor.</p>
       </main>
@@ -55,10 +53,26 @@
         </nav>
         <p class="page_title">About Me</p>
       </header>
-      <!-- <main>
-        <h1>DEVELOPER |  EDUCATOR | MENTOR</h1>
-        <p> I'm a freelance fullstack developer based in London UK, with experience in app & web development as well as python backend systems. When I'm not developing I spend time inspiring individuals and companies <a class="about_link" href="#about">ABOUT</a> the power of code and data in my capicity as an educator and a mentor.</p>
-      </main> -->
+      <main id="about-main">
+        <section id="about-circles">
+          <section class="about-circle" id="about-pkt">
+            <section class="front" id="speaking1"></section>
+            <section class="back">
+              <section class="text">
+                <span class="close-modal">
+                  <i class="fas fa-times fa-3x"></i>
+                </span>
+                <p class="company-name">Project Kitchen Table</p>
+                <p class="job-title">CTO & Co-founder</p>
+                <p class="open-modal-link">See more</p>
+                <p class="tech-stack">React Native, Amazon Alexa, AWS, Firebase</p>
+                <p class="description">A voicebot to equip teenage girls with the confidence they need to manage their own mental health.</p>
+                <a href="projectkitchentable.io" target="_blank" class="external-link"><p>Visit the website <i class="fas fa-angle-double-right"></i></p></a>
+              </section>
+            </section>
+          </section>
+        </section>
+      </main>
     </section>
     <section class="page">
       <a id="services" class="smooth"></a>
@@ -72,10 +86,8 @@
             <p> <a class="contact_link" href="#contact">CONTACT</a> </p>
         </nav>
       </header>
-      <!-- <main>
-        <h1>DEVELOPER |  EDUCATOR | MENTOR</h1>
-        <p> I'm a freelance fullstack developer based in London UK, with experience in app & web development as well as python backend systems. When I'm not developing I spend time inspiring individuals and companies <a class="about_link" href="#about">ABOUT</a> the power of code and data in my capicity as an educator and a mentor.</p>
-      </main> -->
+      <main>
+      </main>
     </section>
     <section class="page">
       <a id="contact" class="smooth"></a>

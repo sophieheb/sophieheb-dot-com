@@ -10,7 +10,7 @@
 
 body {
   color: white;
-  font-family: 'Abel', sans-serif;
+  font-family: 'Open Sans Condensed', sans-serif;
   background-color: #FDDEDC;
   transition: 0.3s all;
 }
@@ -40,8 +40,8 @@ nav {
 }
 
 .page_title {
-  font-family: 'Raleway', sans-serif;
-  font-size: 48px;
+  font-family: 'Molle', cursive;
+  font-size: 56px;
   text-align: center;
 }
 
@@ -108,8 +108,12 @@ a {
 
 
 .image {
+  min-height: 25vh;
+  min-width: 25vh;
   height: 25vh;
   width: 25vh;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
   border-radius: 150%;
   background-position: center;
   background-size: cover;
@@ -124,10 +128,125 @@ a {
   background-image: url('./speaking2.jpg');
 }
 
-#images {
-  height: 30vh;
+#home-images {
   width: 60%;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  z-index: 2
+}
+
+#about-circles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 2
+}
+
+.about-circle {
+  height: 35vh;
+  width: 35vh;
+  min-height: 25vh;
+  min-width: 25vh;
+  margin: 5vh;
+  border-radius: 150%;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0px 0px 5px 5px rgba(192,192,192,0.7);
+  overflow: hidden;
+}
+
+.front, .back {
+  background-position: cover;
+  background-size: cover;
+  background-color: white;
+}
+
+.text  {
+  padding: 15%;
+}
+
+.text p {
+  color: grey;
+  margin: 0;
+  width: 100%
+}
+
+.text-open {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+}
+
+.text-open p {
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+.company-name{
+  font-size: 56px;
+  display: none;
+}
+
+.job-title {
+  font-family: 'Molle', cursive;
+  font-size: 48px;
+}
+
+.tech-stack {
+  display: none;
+
+}
+.description {
+  display: none;
+  margin-bottom: auto;
+}
+
+.external-link {
+  display: none;
+  align-self: flex-end;
+  margin-top: auto;
+}
+
+.fas {
+  display: none;
+}
+
+.back {
+}
+
+
+.show-modal-circle {
+  transition: all 2s;
+  height: 100vh;
+  width: 100vw;
+  border-radius: 0;
+  margin : 0;
+  top: 0;
+}
+
+.show-modal-content {
+
+}
+
+.show {
+
+}
+
+i {
+  color: grey;
+  height: 100%
+}
+
+.no-scroll {
+  overflow: hidden;
+  position: fixed;
+  top: -100vh;
+}
+
+.close-modal {
+  display: none;
+  align-self: flex-end;
 }

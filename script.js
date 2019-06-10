@@ -1,22 +1,39 @@
 window.addEventListener('DOMContentLoaded', (event) => {
+
+  // Whole Page JS
   $('.smooth').on('click', function() {
     $.smoothScroll({
       scrollElement: $('body'),
       scrollTarget: '#' + this.id
     });
-
     return false;
   });
 
+  // About section JS
 
-  $('aside').hover(
-    function(){
-      $(this).addClass('display_details')
-    },
-    function(){
-      $(this).removeClass('display_details')
-    }
-  )
+  let about_circle_shown = false;
+
+  $("#about-pkt, #about-hacksy, #about-decoded, #about-flatiron, #about-speaking").flip({
+    trigger: 'manual'
+  });
+
+  $("#about-pkt, #about-hacksy, #about-decoded, #about-flatiron, #about-speaking").hover(
+    () => {!about_circle_shown ? $("#about-pkt").flip(true) : null},
+    () => {!about_circle_shown ? $("#about-pkt").flip(false) : null},
+  );
+
+  $('.open-modal-link').on('click', () => {
+    about_circle_shown = true;
+    $('#about-pkt').addClass("show-modal-circle")
+    $('#about-pkt > .back').addClass("show-modal-content")
+    $('body').addClass('no-scroll');
+    $('#about-main').css('justify-content', 'flex-end');
+    $('.text').addClass("text-open")
+    $('.company-name, .job-title, .tech-stack, .description, .external-link, .close-modal').css('display', 'block')
+    $('.open-modal-link').css('display', 'none')
+  })
+
+  // Nav Bar JS
 
   $('.home_link').on('click', function () {
     $("body").addClass("blue")
@@ -123,6 +140,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     $('#top_circle').css('left', '-10%');
 
   })
+
 })
 
 $(window).scroll(function () {
