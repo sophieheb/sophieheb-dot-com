@@ -12,7 +12,7 @@
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://github.com/kswedberg/jquery-smooth-scroll/blob/master/jquery.smooth-scroll.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script>
     <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
     <script src="script.js"></script>
 
@@ -35,8 +35,8 @@
       <main>
         <h1>DEVELOPER |  EDUCATOR | MENTOR</h1>
         <section id="home-images">
-          <section class="image" id="speaking1"></section>
-          <section class="image" id="speaking2"></section>
+          <section class="image" id="home1"></section>
+          <section class="image" id="home2"></section>
         </section>
         <p> I'm a freelance fullstack developer based in London UK, with experience in app & web development as well as python backend systems. When I'm not developing I spend time inspiring individuals and companies about the power of code and data in my capicity as an educator and a mentor.</p>
       </main>
@@ -45,7 +45,7 @@
       <a id="about" class="smooth"></a>
       <header>
         <nav>
-            <p> <a href="#home">HOME</a> </p>
+            <p> <a class='home_link' href="#home">HOME</a> </p>
             <p> | </p>
             <p> <a class="services_link" href="#services">SERVICES</a></p>
             <p> | </p>
@@ -54,9 +54,8 @@
         <p class="page_title">About Me</p>
       </header>
       <main id="about-main">
-        <section id="about-circles">
           <section class="about-circle" id="about-pkt">
-            <section class="front" id="speaking1"></section>
+            <section class="front" id="about-pkt-image"></section>
             <section class="back">
               <section class="text">
                 <span class="close-modal">
@@ -64,14 +63,75 @@
                 </span>
                 <p class="company-name">Project Kitchen Table</p>
                 <p class="job-title">CTO & Co-founder</p>
-                <p class="open-modal-link">See more</p>
+                <p class="open-modal-link"><a href="#about">See more</a></p>
                 <p class="tech-stack">React Native, Amazon Alexa, AWS, Firebase</p>
                 <p class="description">A voicebot to equip teenage girls with the confidence they need to manage their own mental health.</p>
                 <a href="projectkitchentable.io" target="_blank" class="external-link"><p>Visit the website <i class="fas fa-angle-double-right"></i></p></a>
               </section>
             </section>
           </section>
-        </section>
+          <section class="about-circle" id="about-decoded">
+            <section class="front" id="about-decoded-image"></section>
+            <section class="back">
+              <section class="text">
+                <span class="close-modal">
+                  <i class="fas fa-times fa-3x"></i>
+                </span>
+                <p class="company-name">Decoded</p>
+                <p class="job-title">Facilitator</p>
+                <p class="open-modal-link"><a href="#about">See more</a></p>
+                <p class="tech-stack">Python, Jupyter Notebooks, HTML, CSS, Javascript</p>
+                <p class="description">For over three years I have travelled the world delivering world class educational experiences. These workshops equipped senior leaders with the knowledge they need to make informed digital decisions for their business and their employees with the skills to upgrade their careers with data science.</p>
+                <a href="decoded.com" target="_blank" class="external-link"><p>Visit the website <i class="fas fa-angle-double-right"></i></p></a>
+              </section>
+            </section>
+          </section>
+          <section class="about-circle" id="about-flatiron">
+            <section class="front" id="about-flatiron-image"></section>
+            <section class="back">
+              <section class="text">
+                <span class="close-modal">
+                  <i class="fas fa-times fa-3x"></i>
+                </span>
+                <p class="company-name">Flatiron School</p>
+                <p class="job-title">Instructor</p>
+                <p class="open-modal-link"><a href="#about">See more</a></p>
+                <p class="tech-stack">HTML, CSS, Javascript</p>
+                <p class="description">I taught two ten week evening courses to equip individuals with the fundamental skills they require to become frontend web developers.</p>
+                <a href="flatironschool.com" target="_blank" class="external-link"><p>Visit the website <i class="fas fa-angle-double-right"></i></p></a>
+              </section>
+            </section>
+          </section>
+          <section class="about-circle" id="about-hacksy">
+            <section class="front" id="about-hacksy-image"></section>
+            <section class="back">
+              <section class="text">
+                <span class="close-modal">
+                  <i class="fas fa-times fa-3x"></i>
+                </span>
+                <p class="company-name">Hacksy</p>
+                <p class="job-title">Developer</p>
+                <p class="open-modal-link"><a href="#about">See more</a></p>
+                <p class="tech-stack">Ruby on Rails, Heroku, HTML, CSS, Javascript</p>
+                <p class="description">Hacksy is friendly chatbot which answers the most common questions in cyber security.</p>
+                <a href="https://www.producthunt.com/posts/hacksy-by-decoded" target="_blank" class="external-link"><p>Visit the website <i class="fas fa-angle-double-right"></i></p></a>
+              </section>
+            </section>
+          </section>
+          <section class="about-circle" id="about-speaking">
+            <section class="front" id="about-speaking-image"></section>
+            <section class="back">
+              <section class="text">
+                <span class="close-modal">
+                  <i class="fas fa-times fa-3x"></i>
+                </span>
+                <p class="company-name">Freelance</p>
+                <p class="job-title">Speaker</p>
+                <p class="open-modal-link"><a href="#about">See more</a></p>
+                <p class="description">I have been speaking at conferences and meetups since 2016 on a range of topics from data and chatbots to women in tech.</p>
+              </section>
+            </section>
+          </section>
       </main>
     </section>
     <section class="page">
@@ -79,14 +139,26 @@
       <header>
         <p class="page_title">Services</p>
         <nav>
-            <p><a href="#home">HOME</a></p>
+            <p><a class='home_link' href="#home">HOME</a></p>
             <p> | </p>
             <p> <a class="about_link" href="#about">ABOUT</a></p>
             <p> | </p>
             <p> <a class="contact_link" href="#contact">CONTACT</a> </p>
         </nav>
       </header>
-      <main>
+      <main id='services-main'>
+        <section id='services-main-broad'>
+          <h1>What I do</h1>
+          <p>My sweet spot lies in broad technical knowledge paired with the ability to share this in simple terms. I aim to bolster the tech sector by providing services that help both businesses and individuals.</p>
+        </section>
+        <section id='services-main-specific'>
+          <h1>Development</h1>
+          <p>I build websites and apps for my clients to their design specifications. I consider scalability and work in a agile process ensuring your business is futureproof</p>
+          <h1>Consultancy</h1>
+          <p>I coach early stage startup founding teams on the feasibility of their technology vision. Giving them actionable, trustworthy tech advice in plain english.</p>
+          <h1>Mentorship</h1>
+          <p>I offer mentorship to women working in technology, pulling on my varied experience. I aim to guide mentees and support them through early career hurdles.</p>
+        </section>
       </main>
     </section>
     <section class="page">
@@ -94,18 +166,25 @@
       <header>
         <p class="page_title">Get in Touch</p>
         <nav>
-            <p> <a href="#home">HOME</a> </p>
+            <p> <a class='home_link' href="#home">HOME</a> </p>
             <p> | </p>
             <p> <a class="about_link" href="#about">ABOUT</a></p>
             <p> | </p>
             <p> <a class="services_link" href="#services">SERVICES</a> </p>
         </nav>
       </header>
-      <!-- <main>
-        <h1>DEVELOPER |  EDUCATOR | MENTOR</h1>
-        <p> I'm a freelance fullstack developer based in London UK, with experience in app & web development as well as python backend systems. When I'm not developing I spend time inspiring individuals and companies <a class="about_link" href="#about">ABOUT</a> the power of code and data in my capicity as an educator and a mentor.</p>
-      </main> -->
+      <main id='contact-main'>
+        <section id='contact-details'>
+          <p>Drop me a message, I’d love to hear from you!</p>
+          <p>hello@sophieheb.com</p>
+        </section>
+          <section class="image" id="contact-image"></section>
+      </main>
     </section>
+
+    <script>
+    	var scroll = new SmoothScroll('a[href*="#"]');
+    </script>
 
   </body>
 </html>

@@ -1,41 +1,66 @@
 window.addEventListener('DOMContentLoaded', (event) => {
 
-  // Whole Page JS
-  $('.smooth').on('click', function() {
-    $.smoothScroll({
-      scrollElement: $('body'),
-      scrollTarget: '#' + this.id
-    });
-    return false;
-  });
-
   // About section JS
 
-  let about_circle_shown = false;
+  let about_modal_shown = false;
 
-  $("#about-pkt, #about-hacksy, #about-decoded, #about-flatiron, #about-speaking").flip({
+  $('.about-circle').flip({
     trigger: 'manual'
   });
 
-  $("#about-pkt, #about-hacksy, #about-decoded, #about-flatiron, #about-speaking").hover(
-    () => {!about_circle_shown ? $("#about-pkt").flip(true) : null},
-    () => {!about_circle_shown ? $("#about-pkt").flip(false) : null},
-  );
+  $('.about-circle').mouseover(function() {
+     !about_modal_shown ? $("#" + this.id).flip(true) : null
+  });
 
-  $('.open-modal-link').on('click', () => {
-    about_circle_shown = true;
-    $('#about-pkt').addClass("show-modal-circle")
-    $('#about-pkt > .back').addClass("show-modal-content")
+  $('.about-circle').mouseout(function() {
+     !about_modal_shown ? $("#" + this.id).flip(false) : null
+  });
+
+  $('.open-modal-link').click(function (){
+    id = $(this).closest('.about-circle').attr('id')
+    about_modal_shown = true;
+
+    // Select the clicked circle as the selected circle and expand it into a modal
+    $('#' + id).addClass('selected-circle')
+    // Remove all the others
+    $('.about-circle:not(.selected-circle)').addClass('hidden-circle')
+    //Stop the body from scrolling
     $('body').addClass('no-scroll');
-    $('#about-main').css('justify-content', 'flex-end');
-    $('.text').addClass("text-open")
-    $('.company-name, .job-title, .tech-stack, .description, .external-link, .close-modal').css('display', 'block')
+
+    // Slim this down
+    $('.company-name, .tech-stack, .description, .external-link, .close-modal').css('display', 'block')
     $('.open-modal-link').css('display', 'none')
+
+  })
+
+
+  $('.close-modal').on('click', function () {
+
+    id = $(this).closest('.selected-circle').attr('id')
+    about_modal_shown = false;
+
+    // Select the clicked circle as the selected circle and expand it into a modal
+    $('#' + id).removeClass('selected-circle')
+    // Remove all the others
+    $('.about-circle:not(.selected-circle)').removeClass('hidden-circle')
+    //Stop the body from scrolling
+    $('body').removeClass('no-scroll');
+
+    $('.company-name, .tech-stack, .description, .external-link, .close-modal').css('display', 'none')
+    $('.open-modal-link').css('display', 'block')
+
   })
 
   // Nav Bar JS
 
-  $('.home_link').on('click', function () {
+    // I don't know if this works??? I don;t think colour is actually being added?
+
+  $('.home_link').on('click', function (e) {
+
+    if(about_modal_shown){
+      return false;
+    }
+
     $("body").addClass("blue")
     $("body").removeClass("pink")
     $("body").removeClass("yellow")
@@ -90,6 +115,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   $('.services_link').on('click', function () {
 
+    if(about_modal_shown){
+      return false;
+    }
+
     $("body").addClass("beige")
     $("body").removeClass("yellow")
     $("body").removeClass("pink")
@@ -116,6 +145,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
   });
 
   $('.contact_link').on('click', function () {
+
+    if(about_modal_shown){
+      return false;
+    }
     $("body").addClass("yellow")
     $("body").removeClass("beige")
     $("body").removeClass("blue")
@@ -206,6 +239,7 @@ $(window).scroll(function () {
       $('#bottom_circle').css('left', bottomCirclePosition + '%');
    }
    else if ($(this).scrollTop() < height*0.745) {
+     console.log("IN 3/4 scroll")
       $("body").addClass("beige")
       $("body").removeClass("yellow")
       $("body").removeClass("pink")
