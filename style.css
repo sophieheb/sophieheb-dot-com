@@ -10,7 +10,7 @@
 
 body {
   color: white;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'letterGothic', sans-serif;
   background-color: #FDDEDC;
   transition: 0.3s all;
 }
@@ -40,8 +40,8 @@ nav {
 }
 
 .page_title {
-  font-family: 'Molle', cursive;
-  font-size: 56px;
+  font-family: 'harvestBarn', sans-serif;
+  font-size: 150px;
   text-align: center;
 }
 
@@ -120,37 +120,37 @@ a {
 }
 
 #home1 {
-  background-image: url('./speaking.jpeg');
+  background-image: url('assets/img/speaking.jpeg');
 }
 
 #home2 {
-  background-image: url('./speaking2.jpg');
+  background-image: url('assets/img/speaking2.jpg');
 }
 
 #about-decoded-image {
-  background-image: url('./about-decoded.png');
+  background-image: url('assets/img/about-decoded.png');
   background-position: center;
   background-size: 120%;
   background-repeat: no-repeat;
 }
 #about-pkt-image {
-  background-image: url('./about-pkt.png');
+  background-image: url('assets/img/about-pkt.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: 75%;
 
 }
 #about-hacksy-image {
-  background-image: url('./about-hacksy.png');
+  background-image: url('assets/img/about-hacksy.png');
 }
 #about-speaking-image {
-  background-image: url('./about-speaking.jpg');
+  background-image: url('assets/img/about-speaking.jpg');
 }
 #about-flatiron-image {
-  background-image: url('./about-flatiron.png');
+  background-image: url('assets/img/about-flatiron.png');
 }
 #contact-image {
-  background-image: url('./contact.jpeg');
+  background-image: url('assets/img/contact.jpeg');
 }
 
 #home-images {
@@ -208,7 +208,7 @@ a {
 }
 
 .job-title {
-  font-family: 'Molle', cursive;
+  font-family: 'harvestBarn', sans-serif;
   font-size: 48px;
 }
 
@@ -324,4 +324,15 @@ i {
 
 #contact-image {
   height: 40vw;
+}
+
+/* fonts */
+@font-face {
+  font-family: harvestBarn;
+  src: url(assets/font/harvestBarn.otf);
+}
+
+@font-face {
+  font-family: letterGothic;
+  src: url(assets/font/letterGothicStd.otf);
 }

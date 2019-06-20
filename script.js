@@ -1,5 +1,7 @@
 window.addEventListener('DOMContentLoaded', (event) => {
 
+  var scroll = new SmoothScroll('a[href*="#"]');
+
   // About section JS
 
   let about_modal_shown = false;
@@ -39,7 +41,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
     id = $(this).closest('.selected-circle').attr('id')
     about_modal_shown = false;
 
-    // Select the clicked circle as the selected circle and expand it into a modal
     $('#' + id).removeClass('selected-circle')
     // Remove all the others
     $('.about-circle:not(.selected-circle)').removeClass('hidden-circle')

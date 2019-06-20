@@ -6,11 +6,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
 
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Molle:400i|Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Molle:400i|Open+Sans+Condensed:300&display=swap" rel="stylesheet" />
+
     <script src="https://kit.fontawesome.com/6c6026efe8.js"></script>
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script>
     <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
@@ -18,14 +17,17 @@
 
   </head>
   <body>
+    <!-- Two Circles -->
     <figure id="top_circle"></figure>
     <figure id="bottom_circle"></figure>
+
+    <!-- Home Page -->
     <section class="page">
       <a id="home" class="smooth"></a>
       <header>
         <p class="page_title">Sophie Hebdidge</p>
         <nav>
-            <p> <a class="about_link" href="#about">ABOUT</a> </p>
+            <p> <a class="about_link" href="#about">ABOUT</a></p>
             <p> | </p>
             <p> <a class="services_link" href="#services">SERVICES</a></p>
             <p> | </p>
@@ -38,9 +40,11 @@
           <section class="image" id="home1"></section>
           <section class="image" id="home2"></section>
         </section>
-        <p> I'm a freelance fullstack developer based in London UK, with experience in app & web development as well as python backend systems. When I'm not developing I spend time inspiring individuals and companies about the power of code and data in my capicity as an educator and a mentor.</p>
+        <p> I'm a freelance, fullstack developer based in London UK, with experience in app & web development as well as python backend systems. When I'm not developing, I spend time inspiring individuals and companies about the power of code and data in my capacity as an educator and a mentor.</p>
       </main>
     </section>
+
+    <!-- About Page -->
     <section class="page">
       <a id="about" class="smooth"></a>
       <header>
@@ -134,6 +138,8 @@
           </section>
       </main>
     </section>
+
+    <!-- Services Page -->
     <section class="page">
       <a id="services" class="smooth"></a>
       <header>
@@ -153,14 +159,16 @@
         </section>
         <section id='services-main-specific'>
           <h1>Development</h1>
-          <p>I build websites and apps for my clients to their design specifications. I consider scalability and work in a agile process ensuring your business is futureproof</p>
+          <p>I build websites and apps for my clients to their design specifications. I consider scalability and work in an agile process ensuring your business is futureproof.</p>
           <h1>Consultancy</h1>
-          <p>I coach early stage startup founding teams on the feasibility of their technology vision. Giving them actionable, trustworthy tech advice in plain english.</p>
+          <p>I coach early stage startup founding teams on the feasibility of their technology vision. Giving them actionable, trustworthy tech advice in plain English.</p>
           <h1>Mentorship</h1>
           <p>I offer mentorship to women working in technology, pulling on my varied experience. I aim to guide mentees and support them through early career hurdles.</p>
         </section>
       </main>
     </section>
+
+    <!-- Contact Page -->
     <section class="page">
       <a id="contact" class="smooth"></a>
       <header>
@@ -181,10 +189,6 @@
           <section class="image" id="contact-image"></section>
       </main>
     </section>
-
-    <script>
-    	var scroll = new SmoothScroll('a[href*="#"]');
-    </script>
 
   </body>
 </html>
