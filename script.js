@@ -26,15 +26,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
     $('#' + id).addClass('selected-circle')
     // Remove all the others
     $('.about-circle:not(.selected-circle)').addClass('hidden-circle')
-    //Stop the body from scrolling
-    $('body').addClass('no-scroll');
+    // //Stop the body from scrolling
+    // $('body').addClass('no-scroll');
 
-    // Slim this down
     $('.company-name, .tech-stack, .description, .external-link, .close-modal').css('display', 'block')
     $('.open-modal-link').css('display', 'none')
 
   })
-
 
   $('.close-modal').on('click', function () {
 
@@ -54,33 +52,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   // Nav Bar JS
 
-    // I don't know if this works??? I don;t think colour is actually being added?
-
-  $('.home_link').on('click', function (e) {
+  $('.home_link').on('click', function () {
 
     if(about_modal_shown){
       return false;
     }
 
-    $("body").addClass("blue")
-    $("body").removeClass("pink")
-    $("body").removeClass("yellow")
-    $("body").removeClass("beige")
-
-    $("#top_circle").addClass("beige")
-    $("#top_circle").removeClass("yellow")
-    $("#top_circle").removeClass("blue")
-    $("#top_circle").removeClass("pink")
-
-    $("#bottom_circle").addClass("yellow")
-    $("#bottom_circle").removeClass("beige")
-    $("#bottom_circle").removeClass("blue")
-    $("#bottom_circle").removeClass("pink")
-
-    $("header").addClass("pink")
-    $("header").removeClass("yellow")
-    $("header").removeClass("blue")
-    $("header").removeClass("beige")
+    setupHomePage()
 
     $('#bottom_circle').css('left', '60%');
     $('#top_circle').css('left', '-10%');
@@ -89,25 +67,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
   })
 
   $('.about_link').on('click', function () {
-    $("body").addClass("beige")
-    $("body").removeClass("yellow")
-    $("body").removeClass("pink")
-    $("body").removeClass("blue")
-
-    $("#top_circle").addClass("pink")
-    $("#top_circle").removeClass("yellow")
-    $("#top_circle").removeClass("blue")
-    $("#top_circle").removeClass("beige")
-
-    $("#bottom_circle").addClass("yellow")
-    $("#bottom_circle").removeClass("beige")
-    $("#bottom_circle").removeClass("blue")
-    $("#bottom_circle").removeClass("pink")
-
-    $("header").addClass("yellow")
-    $("header").removeClass("beige")
-    $("header").removeClass("blue")
-    $("header").removeClass("pink")
+    setupAboutPage()
 
     $('#bottom_circle').css('left', '-10%');
     $('#top_circle').css('left', '60%');
@@ -120,25 +80,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
       return false;
     }
 
-    $("body").addClass("beige")
-    $("body").removeClass("yellow")
-    $("body").removeClass("pink")
-    $("body").removeClass("blue")
-
-    $("#top_circle").addClass("pink")
-    $("#top_circle").removeClass("yellow")
-    $("#top_circle").removeClass("blue")
-    $("#top_circle").removeClass("beige")
-
-    $("#bottom_circle").addClass("yellow")
-    $("#bottom_circle").removeClass("beige")
-    $("#bottom_circle").removeClass("blue")
-    $("#bottom_circle").removeClass("pink")
-
-    $("header").addClass("yellow")
-    $("header").removeClass("beige")
-    $("header").removeClass("blue")
-    $("header").removeClass("pink")
+    setupServicesPage()
 
     $('#bottom_circle').css('left', '110%');
     $('#top_circle').css('left', '-10%');
@@ -150,25 +92,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
     if(about_modal_shown){
       return false;
     }
-    $("body").addClass("yellow")
-    $("body").removeClass("beige")
-    $("body").removeClass("blue")
-    $("body").removeClass("pink")
-
-    $("#top_circle").addClass("beige")
-    $("#top_circle").removeClass("yellow")
-    $("#top_circle").removeClass("blue")
-    $("#top_circle").removeClass("pink")
-
-    $("#bottom_circle").addClass("pink")
-    $("#bottom_circle").removeClass("beige")
-    $("#bottom_circle").removeClass("blue")
-    $("#bottom_circle").removeClass("yellow")
-
-    $("header").addClass("blue")
-    $("header").removeClass("yellow")
-    $("header").removeClass("beige")
-    $("header").removeClass("pink")
+    
+    setupContactPage()
 
     $('#bottom_circle').css('left', '60%');
     $('#top_circle').css('left', '-10%');
@@ -179,116 +104,82 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 $(window).scroll(function () {
 
-    var height = Math.max(document.body.scrollHeight,
-                          document.body.offsetHeight,
-                          document.documentElement.clientHeight,
-                          document.documentElement.scrollHeight,
-                          document.documentElement.offsetHeight);
+  const height = Math.max(document.body.scrollHeight,
+                        document.body.offsetHeight,
+                        document.documentElement.clientHeight,
+                        document.documentElement.scrollHeight,
+                        document.documentElement.offsetHeight);
 
-   if ($(this).scrollTop() < height*0.245) {
-      $("body").addClass("pink")
-      $("body").removeClass("beige")
-      $("body").removeClass("blue")
-      $("body").removeClass("yellow")
+  if ($(this).scrollTop() < height*0.245) {
+    setupHomePage()
+    
+    let topCirclePosition = moveCircle(0, height*0.25, 70, $(this).scrollTop(), -10, 1)
+    $('#top_circle').css('left', topCirclePosition + '%');
 
-      $("#top_circle").addClass("yellow")
-      $("#top_circle").removeClass("beige")
-      $("#top_circle").removeClass("blue")
-      $("#top_circle").removeClass("pink")
+    let bottomCirclePosition = moveCircle(0, height*0.25, 70, $(this).scrollTop(), 60, -1)
+    $('#bottom_circle').css('left', bottomCirclePosition + '%');
+  }
+  else if ($(this).scrollTop() < height*0.495) {
+    setupAboutPage()
+    
+    let topCirclePosition = moveCircle(height*0.25, height*0.5, 70, $(this).scrollTop(), 60, -1)
+    $('#top_circle').css('left', topCirclePosition + '%');
 
-      $("#bottom_circle").addClass("yellow")
-      $("#bottom_circle").removeClass("beige")
-      $("#bottom_circle").removeClass("blue")
-      $("#bottom_circle").removeClass("pink")
+    let bottomCirclePosition = moveCircle(height*0.25, height*0.5, 120, $(this).scrollTop(), -10, 1)
+    $('#bottom_circle').css('left', bottomCirclePosition + '%');
+  }
+  else if ($(this).scrollTop() < height*0.745) {
+    setupServicesPage()
 
-      $("header").addClass("beige")
-      $("header").removeClass("yellow")
-      $("header").removeClass("blue")
-      $("header").removeClass("pink")
+    let bottomCirclePosition = moveCircle(height*0.5, height*0.75, 50, $(this).scrollTop(), 110, -1)
+    $('#bottom_circle').css('left', bottomCirclePosition + '%');
 
-      let topCirclePosition = moveCircle(0, height*0.25, 70, $(this).scrollTop(), -10, 1)
-      $('#top_circle').css('left', topCirclePosition + '%');
-
-      let bottomCirclePosition = moveCircle(0, height*0.25, 70, $(this).scrollTop(), 60, -1)
-      $('#bottom_circle').css('left', bottomCirclePosition + '%');
-   }
-   else if ($(this).scrollTop() < height*0.495) {
-      $("body").addClass("blue")
-      $("body").removeClass("pink")
-      $("body").removeClass("yellow")
-      $("body").removeClass("beige")
-
-      $("#top_circle").addClass("beige")
-      $("#top_circle").removeClass("yellow")
-      $("#top_circle").removeClass("blue")
-      $("#top_circle").removeClass("pink")
-
-      $("#bottom_circle").addClass("yellow")
-      $("#bottom_circle").removeClass("beige")
-      $("#bottom_circle").removeClass("blue")
-      $("#bottom_circle").removeClass("pink")
-
-      $("header").addClass("pink")
-      $("header").removeClass("yellow")
-      $("header").removeClass("blue")
-      $("header").removeClass("beige")
-
-      let topCirclePosition = moveCircle(height*0.25, height*0.5, 70, $(this).scrollTop(), 60, -1)
-      $('#top_circle').css('left', topCirclePosition + '%');
-
-      let bottomCirclePosition = moveCircle(height*0.25, height*0.5, 120, $(this).scrollTop(), -10, 1)
-      $('#bottom_circle').css('left', bottomCirclePosition + '%');
-   }
-   else if ($(this).scrollTop() < height*0.745) {
-     console.log("IN 3/4 scroll")
-      $("body").addClass("beige")
-      $("body").removeClass("yellow")
-      $("body").removeClass("pink")
-      $("body").removeClass("blue")
-
-      $("#top_circle").addClass("pink")
-      $("#top_circle").removeClass("yellow")
-      $("#top_circle").removeClass("blue")
-      $("#top_circle").removeClass("beige")
-
-      $("#bottom_circle").addClass("yellow")
-      $("#bottom_circle").removeClass("beige")
-      $("#bottom_circle").removeClass("blue")
-      $("#bottom_circle").removeClass("pink")
-
-      $("header").addClass("yellow")
-      $("header").removeClass("beige")
-      $("header").removeClass("blue")
-      $("header").removeClass("pink")
-
-      let bottomCirclePosition = moveCircle(height*0.5, height*0.75, 50, $(this).scrollTop(), 110, -1)
-      $('#bottom_circle').css('left', bottomCirclePosition + '%');
-
-   }
-   else if ($(this).scrollTop() >= height*0.745) {
-      $("body").addClass("yellow")
-      $("body").removeClass("beige")
-      $("body").removeClass("blue")
-      $("body").removeClass("pink")
-
-      $("#top_circle").addClass("beige")
-      $("#top_circle").removeClass("yellow")
-      $("#top_circle").removeClass("blue")
-      $("#top_circle").removeClass("pink")
-
-      $("#bottom_circle").addClass("pink")
-      $("#bottom_circle").removeClass("beige")
-      $("#bottom_circle").removeClass("blue")
-      $("#bottom_circle").removeClass("yellow")
-
-      $("header").addClass("blue")
-      $("header").removeClass("yellow")
-      $("header").removeClass("beige")
-      $("header").removeClass("pink")
-
-   }
+  }
+  else if ($(this).scrollTop() >= height*0.745) {
+    setupContactPage()
+  }
 
 });
+
+function setupHomePage(){
+  changeColor("header", "beige");
+  changeColor("#bottom_circle", "yellow");
+  changeColor("#top_circle", "yellow");
+  changeColor("body", "pink");
+}
+
+function setupAboutPage(){
+  changeColor("header", "pink");
+  changeColor("#bottom_circle", "yellow");
+  changeColor("#top_circle", "beige");
+  changeColor("body", "blue");
+}
+
+function setupServicesPage(){
+  changeColor("header", "yellow");
+  changeColor("#bottom_circle", "yellow");
+  changeColor("#top_circle", "pink");
+  changeColor("body", "beige");
+  
+}
+
+function setupContactPage(){
+  changeColor("header", "blue");
+  changeColor("#bottom_circle", "pink");
+  changeColor("#top_circle", "beige");
+  changeColor("body", "yellow");
+}
+
+function changeColor(element, colour) {
+  const colours = ["beige", "yellow", "blue", "pink"]
+  
+  $(element).addClass(colour)
+  
+  for (c of colours.filter(c => c != colour)) {
+    $(element).removeClass(c)
+  }
+  
+}
 
 function moveCircle(lowestScroll, maxScroll, pixelsToMove, currentScroll,  offset, multiplier){
   let numberOfPixelsInEachMovementOfCircle = ((maxScroll-lowestScroll)/pixelsToMove)

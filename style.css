@@ -10,28 +10,26 @@
 
 body {
   color: white;
-  font-family: 'letterGothic', sans-serif;
+  font-family: 'News Cycle', sans-serif;
   background-color: #FDDEDC;
   transition: 0.3s all;
 }
 
 .page {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   transition: 0.3s all;
 }
 
 header {
   background-color: #E8BF94;
-  height: 10%;
-  width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  padding: 30px 2em;
 }
 
 nav {
-  width: 50%;
   height: 10%;
   display: flex;
   justify-content:space-around;
@@ -39,10 +37,25 @@ nav {
   padding:10px;
 }
 
+.nav_separator {
+  padding: 5px;
+}
+
+@media (max-width: 812px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .nav_separator {
+    display: none;
+  }
+}
+
 .page_title {
-  font-family: 'harvestBarn', sans-serif;
-  font-size: 150px;
-  text-align: center;
+  font-family: 'Satisfy', cursive;
+  font-size: 48px;
+  order: 0;
 }
 
 figure {
@@ -73,12 +86,14 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  min-height: 90vh;
+  padding: 5vh;
 }
 
 h1 {
   z-index: 1;
   font-size: 48px;
+  text-align: center;
 }
 
 p {
@@ -150,7 +165,7 @@ a {
   background-image: url('assets/img/about-flatiron.png');
 }
 #contact-image {
-  background-image: url('assets/img/contact.jpeg');
+  background-image: url('assets/img/contact.jpg');
 }
 
 #home-images {
@@ -199,8 +214,8 @@ a {
 
 .text p {
   color: grey;
+  padding: 20px;
 }
-
 
 .company-name{
   font-size: 56px;
@@ -208,13 +223,14 @@ a {
 }
 
 .job-title {
-  font-family: 'harvestBarn', sans-serif;
+  font-family: 'Satisfy', cursive;
   font-size: 48px;
 }
 
 .tech-stack {
   display: none;
 }
+
 .description {
   display: none;
   margin-bottom: auto;
@@ -254,7 +270,7 @@ i {
 }
 
 .selected-circle {
-  height: 80vh;
+  height: 100%;
   width: 80vw;
   border-radius: 10px;
   margin : 0;
@@ -326,13 +342,18 @@ i {
   height: 40vw;
 }
 
-/* fonts */
-@font-face {
-  font-family: harvestBarn;
-  src: url(assets/font/harvestBarn.otf);
-}
 
-@font-face {
-  font-family: letterGothic;
-  src: url(assets/font/letterGothicStd.otf);
+@media (max-width:320px){
+  header {
+    flex-direction: column;
+  }
+  #bottom_circle {
+    height: 33%;
+  }
+  #top_circle {
+    width: 66%;
+  }
+  #home-images {
+    display:none;
+  }
 }
