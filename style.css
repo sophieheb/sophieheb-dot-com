@@ -55,7 +55,7 @@ nav {
 .page_title {
   font-family: 'Satisfy', cursive;
   font-size: 48px;
-  order: 0;
+  order: -1;
 }
 
 figure {
@@ -86,7 +86,6 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 90vh;
   padding: 5vh;
 }
 
@@ -128,7 +127,7 @@ a {
   width: 25vh;
   margin-top: 5vh;
   margin-bottom: 5vh;
-  border-radius: 150%;
+  border-radius: 50%;
   background-position: center;
   background-size: cover;
   box-shadow: 0px 0px 5px 5px rgba(192,192,192,0.7);
@@ -144,16 +143,11 @@ a {
 
 #about-decoded-image {
   background-image: url('assets/img/about-decoded.png');
-  background-position: center;
   background-size: 120%;
-  background-repeat: no-repeat;
 }
 #about-pkt-image {
   background-image: url('assets/img/about-pkt.png');
-  background-position: center;
-  background-repeat: no-repeat;
   background-size: 75%;
-
 }
 #about-hacksy-image {
   background-image: url('assets/img/about-hacksy.png');
@@ -189,7 +183,7 @@ a {
   height: 35vh;
   width: 35vh;
   margin: 5vh;
-  border-radius: 150%;
+  border-radius: 50%;
   background-position: center;
   background-size: cover;
   box-shadow: 0px 0px 5px 5px rgba(192,192,192,0.7);
@@ -198,10 +192,11 @@ a {
 }
 
 .front, .back {
-  background-position: cover;
+  background-position: center;
   background-size: cover;
   background-color: white;
-}
+  background-repeat: no-repeat;
+}  
 
 .text  {
   display: flex;
@@ -270,7 +265,7 @@ i {
 }
 
 .selected-circle {
-  height: 100%;
+  height: 100% !important;
   width: 80vw;
   border-radius: 10px;
   margin : 0;
@@ -283,7 +278,7 @@ i {
   width: 0;
   opacity: 0;
   margin: 0;
-  transition: height 0.5s, width 0.5s, opacity 0.5s linear;
+  display: none;
 }
 
 .open-modal-link > a {
@@ -303,10 +298,12 @@ i {
 
 #services-main-broad {
   width: 30%;
+  z-index: 1;
 }
 
 #services-main-specific {
   width: 45%;
+  z-index: 1;
 }
 
 #services-main section p {
@@ -319,6 +316,7 @@ i {
 #contact-main {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 #contact-main section {
@@ -326,24 +324,23 @@ i {
   z-index: 2
 }
 
-#contact-details {
-  height: 60%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-#contact-details p {
+#contact-main p {
   text-align: left;
   font-size: 48px;
+  width: 40vw;
+  padding: 0px 20px;
 }
 
 #contact-image {
   height: 40vw;
 }
 
+/* Mobile stylings */
 
 @media (max-width:320px){
+  main {
+    min-height: 0px;
+  }
   header {
     flex-direction: column;
   }
@@ -355,5 +352,42 @@ i {
   }
   #home-images {
     display:none;
+  }
+  
+  #services-main {
+    flex-direction: column;
+  }
+  #services-main-broad {
+    width: 100%;
+  }
+  #services-main-specific {
+    width: 100%;
+  }
+  #contact-main {
+    flex-direction: column;
+  }
+
+  #contact-main p {
+    font-size: 28px;
+    width: 80vw;
+    padding: 0px;
+  }
+
+}
+
+@media (max-width: 420px){
+  .about-circle {
+    height: 65vw;
+    width: 65vw;
+    margin: 5vw;
+  }
+  
+  .text p{
+    font-size: 16px;
+    padding: 0px 20px;
+  }
+  
+  .fa-3x {
+    font-size: 2em !important;
   }
 }
