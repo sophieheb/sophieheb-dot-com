@@ -22,21 +22,20 @@
 
     <script src="https://kit.fontawesome.com/6c6026efe8.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script>
     <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
     <script src="script.js"></script>
 
   </head>
   <body>
     <!-- Two Circles -->
-    <figure id="top_circle"></figure>
-    <figure id="bottom_circle"></figure>
+    <figure id="top-circle" class="top-circle"></figure>
+    <figure id="bottom-circle" class="bottom-circle"></figure>
 
     <!-- Home Page -->
     <section class="page">
       <a id="home" class="smooth"></a>
       <header>
-        <p class="page_title">Sophie Hebdidge</p>
+        <h1 class="page-title">Sophie Hebdidge</h1>
         <nav>
             <p> <a class="about_link" href="#about">ABOUT</a></p>
             <p class='nav_separator'> | </p>
@@ -45,14 +44,14 @@
             <p> <a class="contact_link" href="#contact">CONTACT</a> </p>
         </nav>
       </header>
-      <main>
-        <h1>DEVELOPER &&  EDUCATOR && MENTOR</h1>
-        <section id="home-images">
-          <section class="image" id="home1"></section>
-          <section class="image" id="home2"></section>
-        </section>
+      <article>
+        <h2>DEVELOPER && EDUCATOR && MENTOR</h2>
+        <aside class="home-images">
+          <figure class="image home1"></figure>
+          <figure class="image home2"></figure>
+        </aside>
         <p> I'm a freelance, fullstack developer, with experience in app & web development as well as python backend systems. When I'm not developing, I spend time inspiring individuals and companies about the power of code and data in my capacity as an educator and a mentor.</p>
-      </main>
+      </article>
     </section>
 
     <!-- About Page -->
@@ -66,95 +65,101 @@
             <p class='nav_separator'> | </p>
             <p> <a class="contact_link" href="#contact">CONTACT</a> </p>
         </nav>
-        <p class="page_title">About Me</p>
+        <h1 class="page-title">About Me</h1>
       </header>
-      <main id="about-main">
+      <article class="about-main">
+          <h2 class='hidden-header'>About Sophie</h2>
           <section class="about-circle" id="about-pkt">
-            <section class="front" id="about-pkt-image"></section>
-            <section class="back">
-              <section class="text">
-                <span class="close-modal">
-                  <i class="fas fa-times fa-3x"></i>
+            <h2 class='hidden-header'>CTO & Co-founder, Project Kitchen Table </h2>
+            <figure class="front about-pkt-image"></figure>
+            <figure class="back">
+              <section class="about-info">
+                <span class="close-modal about-info-item">
+                  <i class="fas fa-times fa-2x"></i>
                 </span>
-                <p class="company-name">Project Kitchen Table</p>
-                <p class="job-title">CTO & Co-founder</p>
-                <p class="open-modal-link"><a href="#about">See more</a></p>
-                <p class="tech-stack">React Native, Amazon Alexa, AWS, Firebase</p>
-                <p class="description">A voicebot to equip teenage girls with the confidence they need to manage their own mental health.</p>
-                <a href="projectkitchentable.io" target="_blank" class="external-link"><p>Visit the website <i class="fas fa-angle-double-right"></i></p></a>
+                <h3 class="company-name about-info-item">Project Kitchen Table</h3>
+                <h2 class="job-title">CTO & Co-founder</h2>
+                <p class="open-modal"><a href="#about">See more</a></p>
+                <p class="tech-stack about-info-item">React Native, Amazon Alexa, AWS, Firebase</p>
+                <p class="description about-info-item">A voicebot to equip teenage girls with the confidence they need to manage their own mental health.</p>
+                <a href="projectkitchentable.io" target="_blank" class="external-link about-info-item"><p>Visit the website <i class="fas fa-angle-double-right"></i></p></a>
               </section>
-            </section>
+            </figure>
           </section>
           <section class="about-circle" id="about-decoded">
-            <section class="front" id="about-decoded-image"></section>
-            <section class="back">
-              <section class="text">
-                <span class="close-modal">
+            <h2 class='hidden-header'>Facilitator, Decoded</h2>
+            <figure class="about-decoded-image front"></figure>
+            <figure class="back">
+              <section class="about-info">
+                <span class="close-modal about-info-item">
                   <i class="fas fa-times fa-3x"></i>
                 </span>
-                <p class="company-name">Decoded</p>
-                <p class="job-title">Facilitator</p>
-                <p class="open-modal-link"><a href="#about">See more</a></p>
-                <p class="tech-stack">Python, Jupyter Notebooks, HTML, CSS, Javascript</p>
-                <p class="description">For over three years I have travelled the world delivering world class educational experiences. These workshops equipped senior leaders with the knowledge they need to make informed digital decisions for their business and their employees with the skills to upgrade their careers with data science.</p>
-                <a href="decoded.com" target="_blank" class="external-link"><p>Visit the website <i class="fas fa-angle-double-right"></i></p></a>
+                <h3 class="company-name about-info-item">Decoded</h3>
+                <h2 class="job-title">Facilitator</h2>
+                <p class="open-modal"><a href="#about">See more</a></p>
+                <p class="tech-stack about-info-item">Python, Jupyter Notebooks, HTML, CSS, Javascript</p>
+                <p class="description about-info-item">For over three years I have travelled the world delivering world class educational experiences. These workshops equipped senior leaders with the knowledge they need to make informed digital decisions for their business and their employees with the skills to upgrade their careers with data science.</p>
+                <a href="decoded.com" target="_blank" class="external-link about-info-item"><p>Visit the website <i class="fas fa-angle-double-right"></i></p></a>
               </section>
-            </section>
+            </figure>
           </section>
           <section class="about-circle" id="about-flatiron">
-            <section class="front" id="about-flatiron-image"></section>
-            <section class="back">
-              <section class="text">
-                <span class="close-modal">
+            <h2 class='hidden-header'>Instructor, Flatiron School</h2>
+            <figure class="front about-flatiron-image"></figure>
+            <figure class="back">
+              <section class="about-info">
+                <span class="close-modal about-info-item">
                   <i class="fas fa-times fa-3x"></i>
                 </span>
-                <p class="company-name">Flatiron School</p>
-                <p class="job-title">Instructor</p>
-                <p class="open-modal-link"><a href="#about">See more</a></p>
-                <p class="tech-stack">HTML, CSS, Javascript</p>
-                <p class="description">I taught two ten week evening courses to equip individuals with the fundamental skills they require to become frontend web developers.</p>
-                <a href="flatironschool.com" target="_blank" class="external-link"><p>Visit the website <i class="fas fa-angle-double-right"></i></p></a>
+                <h3 class="company-name about-info-item">Flatiron School</h3>
+                <h2 class="job-title">Instructor</h2>
+                <p class="open-modal"><a href="#about">See more</a></p>
+                <p class="tech-stack about-info-item">HTML, CSS, Javascript</p>
+                <p class="description about-info-item">I taught two ten week evening courses to equip individuals with the fundamental skills they require to become frontend web developers.</p>
+                <a href="flatironschool.com" target="_blank" class="external-link about-info-item"><p>Visit the website <i class="fas fa-angle-double-right"></i></p></a>
               </section>
-            </section>
+            </figure>
           </section>
           <section class="about-circle" id="about-hacksy">
-            <section class="front" id="about-hacksy-image"></section>
-            <section class="back">
-              <section class="text">
-                <span class="close-modal">
+            <h2 class='hidden-header'>Developer, Hacksy</h2>
+            <figure class="front about-hacksy-image"></figure>
+            <figure class="back">
+              <section class="about-info">
+                <span class="close-modal about-info-item">
                   <i class="fas fa-times fa-3x"></i>
                 </span>
-                <p class="company-name">Hacksy</p>
-                <p class="job-title">Developer</p>
-                <p class="open-modal-link"><a href="#about">See more</a></p>
-                <p class="tech-stack">Ruby on Rails, Heroku, HTML, CSS, Javascript</p>
-                <p class="description">Hacksy is friendly chatbot which answers the most common questions in cyber security.</p>
-                <a href="https://www.producthunt.com/posts/hacksy-by-decoded" target="_blank" class="external-link"><p>Visit the website <i class="fas fa-angle-double-right"></i></p></a>
+                <h3 class="company-name about-info-item">Hacksy</h3>
+                <h2 class="job-title">Developer</h2>
+                <p class="open-modal"><a href="#about">See more</a></p>
+                <p class="tech-stack about-info-item">Ruby on Rails, Heroku, HTML, CSS, Javascript</p>
+                <p class="description about-info-item">Hacksy is friendly chatbot which answers the most common questions in cyber security.</p>
+                <a href="https://www.producthunt.com/posts/hacksy-by-decoded" target="_blank" class="external-link about-info-item"><p>Visit the website <i class="fas fa-angle-double-right"></i></p></a>
               </section>
-            </section>
+            </figure>
           </section>
           <section class="about-circle" id="about-speaking">
-            <section class="front" id="about-speaking-image"></section>
-            <section class="back">
-              <section class="text">
-                <span class="close-modal">
+            <h2 class='hidden-header'>Speaker, Freelance</h2>
+            <figure class="front about-speaking-image"></figure>
+            <figure class="back">
+              <section class="about-info">
+                <span class="close-modal about-info-item">
                   <i class="fas fa-times fa-3x"></i>
                 </span>
-                <p class="company-name">Freelance</p>
-                <p class="job-title">Speaker</p>
-                <p class="open-modal-link"><a href="#about">See more</a></p>
-                <p class="description">I have been speaking at conferences and meetups since 2016 on a range of topics from data and chatbots to women in tech.</p>
+                <h3 class="company-name about-info-item">Freelance</h3>
+                <h2 class="job-title">Speaker</h2>
+                <p class="open-modal"><a href="#about">See more</a></p>
+                <p class="description about-info-item">I have been speaking at conferences and meetups since 2016 on a range of topics from data and chatbots to women in tech.</p>
               </section>
-            </section>
+            </figure>
           </section>
-      </main>
+      </article>
     </section>
 
     <!-- Services Page -->
     <section class="page">
       <a id="services" class="smooth"></a>
       <header>
-        <p class="page_title">Services</p>
+        <h1 class="page-title">Services</h1>
         <nav>
             <p><a class='home_link' href="#home">HOME</a></p>
             <p class='nav_separator'> | </p>
@@ -163,27 +168,28 @@
             <p> <a class="contact_link" href="#contact">CONTACT</a> </p>
         </nav>
       </header>
-      <main id='services-main'>
-        <section id='services-main-broad'>
-          <h1>What I do</h1>
+      <article class='services-main'>
+        <h2 class='hidden-header'>What I do</h2>
+        <section class='services-main-broad'>
+          <h2>What I do</h2>
           <p>My sweet spot lies in broad technical knowledge paired with the ability to share this in simple terms. I aim to bolster the tech sector by providing services that help both businesses and individuals.</p>
         </section>
-        <section id='services-main-specific'>
-          <h1>Development</h1>
+        <section class='services-main-specific'>
+          <h2>Development</h2>
           <p>I build websites and apps for my clients to their design specifications. I consider scalability and work in an agile process ensuring your business is futureproof.</p>
-          <h1>Consultancy</h1>
+          <h2>Consultancy</h2>
           <p>I coach early stage startup founding teams on the feasibility of their technology vision. Giving them actionable, trustworthy tech advice in plain English.</p>
-          <h1>Mentorship</h1>
+          <h2>Mentorship</h2>
           <p>I offer mentorship to women working in technology, pulling on my varied experience. I aim to guide mentees and support them through early career hurdles.</p>
         </section>
-      </main>
+      </article>
     </section>
 
     <!-- Contact Page -->
     <section class="page">
       <a id="contact" class="smooth"></a>
       <header>
-        <p class="page_title">Get in Touch</p>
+        <h1 class="page-title">Get in Touch</h1>
         <nav>
             <p> <a class='home_link' href="#home">HOME</a> </p>
             <p class='nav_separator'> | </p>
@@ -192,11 +198,12 @@
             <p> <a class="services_link" href="#services">SERVICES</a> </p>
         </nav>
       </header>
-      <main id='contact-main'>
+      <article class='contact-main'>
+        <h2 class='hidden-header'>Contact</h2>
         <p>Drop me a message, I’d love to hear from you!</p>
-        <section class="image" id="contact-image"></section>
+        <figure class="image contact-image"></figure>
         <p>hello@sophieheb.com</p>
-      </main>
+      </article>
     </section>
 
   </body>

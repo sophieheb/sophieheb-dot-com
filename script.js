@@ -1,7 +1,5 @@
 window.addEventListener('DOMContentLoaded', (event) => {
 
-  var scroll = new SmoothScroll('a[href*="#"]');
-
   // About section JS
 
   let about_modal_shown = false;
@@ -18,19 +16,21 @@ window.addEventListener('DOMContentLoaded', (event) => {
      !about_modal_shown ? $("#" + this.id).flip(false) : null
   });
 
-  $('.open-modal-link').click(function (){
+  $('.open-modal').click(function (){
     id = $(this).closest('.about-circle').attr('id')
     about_modal_shown = true;
+    
+    document.querySelector('#about').scrollIntoView({ 
+      behavior: 'smooth' 
+    })
 
     // Select the clicked circle as the selected circle and expand it into a modal
     $('#' + id).addClass('selected-circle')
     // Remove all the others
     $('.about-circle:not(.selected-circle)').addClass('hidden-circle')
-    // //Stop the body from scrolling
-    // $('body').addClass('no-scroll');
 
-    $('.company-name, .tech-stack, .description, .external-link, .close-modal').css('display', 'block')
-    $('.open-modal-link').css('display', 'none')
+    $('.about-info-item').css('display', 'block')
+    $('.open-modal').css('display', 'none')
 
   })
 
@@ -42,11 +42,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
     $('#' + id).removeClass('selected-circle')
     // Remove all the others
     $('.about-circle:not(.selected-circle)').removeClass('hidden-circle')
-    //Stop the body from scrolling
-    $('body').removeClass('no-scroll');
 
-    $('.company-name, .tech-stack, .description, .external-link, .close-modal').css('display', 'none')
-    $('.open-modal-link').css('display', 'block')
+    $('.about-info-item').css('display', 'none')
+    $('.open-modal').css('display', 'block')
 
   })
 
@@ -60,17 +58,18 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     setupHomePage()
 
-    $('#bottom_circle').css('left', '60%');
-    $('#top_circle').css('left', '-10%');
+    $('#bottom-circle').css('left', '60%');
+    $('#top-circle').css('left', '-10%');
 
 
   })
 
   $('.about_link').on('click', function () {
+
     setupAboutPage()
 
-    $('#bottom_circle').css('left', '-10%');
-    $('#top_circle').css('left', '60%');
+    $('#bottom-circle').css('left', '-10%');
+    $('#top-circle').css('left', '60%');
 
   })
 
@@ -82,8 +81,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     setupServicesPage()
 
-    $('#bottom_circle').css('left', '110%');
-    $('#top_circle').css('left', '-10%');
+    $('#bottom-circle').css('left', '110%');
+    $('#top-circle').css('left', '-10%');
 
   });
 
@@ -95,12 +94,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
     
     setupContactPage()
 
-    $('#bottom_circle').css('left', '60%');
-    $('#top_circle').css('left', '-10%');
+    $('#bottom-circle').css('left', '60%');
+    $('#top-circle').css('left', '-10%');
 
   })
 
 })
+
+// TODO: Are these the correct heights  that the page changes size based on content?
 
 $(window).scroll(function () {
 
@@ -114,25 +115,25 @@ $(window).scroll(function () {
     setupHomePage()
     
     let topCirclePosition = moveCircle(0, height*0.25, 70, $(this).scrollTop(), -10, 1)
-    $('#top_circle').css('left', topCirclePosition + '%');
+    $('#top-circle').css('left', topCirclePosition + '%');
 
     let bottomCirclePosition = moveCircle(0, height*0.25, 70, $(this).scrollTop(), 60, -1)
-    $('#bottom_circle').css('left', bottomCirclePosition + '%');
+    $('#bottom-circle').css('left', bottomCirclePosition + '%');
   }
   else if ($(this).scrollTop() < height*0.495) {
     setupAboutPage()
     
     let topCirclePosition = moveCircle(height*0.25, height*0.5, 70, $(this).scrollTop(), 60, -1)
-    $('#top_circle').css('left', topCirclePosition + '%');
+    $('#top-circle').css('left', topCirclePosition + '%');
 
     let bottomCirclePosition = moveCircle(height*0.25, height*0.5, 120, $(this).scrollTop(), -10, 1)
-    $('#bottom_circle').css('left', bottomCirclePosition + '%');
+    $('#bottom-circle').css('left', bottomCirclePosition + '%');
   }
   else if ($(this).scrollTop() < height*0.745) {
     setupServicesPage()
 
     let bottomCirclePosition = moveCircle(height*0.5, height*0.75, 50, $(this).scrollTop(), 110, -1)
-    $('#bottom_circle').css('left', bottomCirclePosition + '%');
+    $('#bottom-circle').css('left', bottomCirclePosition + '%');
 
   }
   else if ($(this).scrollTop() >= height*0.745) {
@@ -143,30 +144,30 @@ $(window).scroll(function () {
 
 function setupHomePage(){
   changeColor("header", "beige");
-  changeColor("#bottom_circle", "yellow");
-  changeColor("#top_circle", "yellow");
+  changeColor("#bottom-circle", "yellow");
+  changeColor("#top-circle", "yellow");
   changeColor("body", "pink");
 }
 
 function setupAboutPage(){
   changeColor("header", "pink");
-  changeColor("#bottom_circle", "yellow");
-  changeColor("#top_circle", "beige");
+  changeColor("#bottom-circle", "yellow");
+  changeColor("#top-circle", "beige");
   changeColor("body", "blue");
 }
 
 function setupServicesPage(){
   changeColor("header", "yellow");
-  changeColor("#bottom_circle", "yellow");
-  changeColor("#top_circle", "pink");
+  changeColor("#bottom-circle", "yellow");
+  changeColor("#top-circle", "pink");
   changeColor("body", "beige");
   
 }
 
 function setupContactPage(){
   changeColor("header", "blue");
-  changeColor("#bottom_circle", "pink");
-  changeColor("#top_circle", "beige");
+  changeColor("#bottom-circle", "pink");
+  changeColor("#top-circle", "beige");
   changeColor("body", "yellow");
 }
 
