@@ -320,7 +320,8 @@ i {
 }
 
 #contact-main section {
-  width: 40vw;
+  width: 30vw;
+  height: 30vw;
   z-index: 2
 }
 
@@ -329,10 +330,6 @@ i {
   font-size: 48px;
   width: 40vw;
   padding: 0px 20px;
-}
-
-#contact-image {
-  height: 40vw;
 }
 
 /* Mobile stylings */
