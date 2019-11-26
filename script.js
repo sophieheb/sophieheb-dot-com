@@ -1,188 +1,220 @@
-window.addEventListener('DOMContentLoaded', (event) => {
+function changeColor(element, color) {
+    const colors = ["beige", "yellow", "blue", "pink"];
 
-  // About section JS
+    $(element).addClass(color);
 
-  let about_modal_shown = false;
+    colors.filter((c) => c !== color).forEach((c) => $(element).removeClass(c));
+}
 
-  $('.about-circle').flip({
-    trigger: 'manual'
-  });
+function setupHomePage() {
+    changeColor("header", "beige");
+    changeColor("#bottom-circle", "yellow");
+    changeColor("#top-circle", "yellow");
+    changeColor("body", "pink");
+}
 
-  $('.about-circle').mouseover(function() {
-     !about_modal_shown ? $("#" + this.id).flip(true) : null
-  });
+function setupAboutPage() {
+    changeColor("header", "pink");
+    changeColor("#bottom-circle", "yellow");
+    changeColor("#top-circle", "beige");
+    changeColor("body", "blue");
+}
 
-  $('.about-circle').mouseout(function() {
-     !about_modal_shown ? $("#" + this.id).flip(false) : null
-  });
+function setupServicesPage() {
+    changeColor("header", "yellow");
+    changeColor("#bottom-circle", "yellow");
+    changeColor("#top-circle", "pink");
+    changeColor("body", "beige");
 
-  $('.open-modal').click(function (){
-    id = $(this).closest('.about-circle').attr('id')
-    about_modal_shown = true;
-    
-    document.querySelector('#about').scrollIntoView({ 
-      behavior: 'smooth' 
-    })
+}
 
-    // Select the clicked circle as the selected circle and expand it into a modal
-    $('#' + id).addClass('selected-circle')
-    // Remove all the others
-    $('.about-circle:not(.selected-circle)').addClass('hidden-circle')
+function setupContactPage() {
+    changeColor("header", "blue");
+    changeColor("#bottom-circle", "pink");
+    changeColor("#top-circle", "beige");
+    changeColor("body", "yellow");
+}
 
-    $('.about-info-item').css('display', 'block')
-    $('.open-modal').css('display', 'none')
+function moveCircle(
+    lowestScroll,
+    maxScroll,
+    pixelsToMove,
+    currentScroll,
+    offset,
+    multiplier // Acts to change direction
+) {
+    let pixelsInEntireSection = maxScroll - lowestScroll;
+    let pixelsToEndOfSection = (currentScroll - lowestScroll);
+    let pixelsToEndOfSectionWithDirection = pixelsToEndOfSection * multiplier;
+    let pixelsInEachCircleShift = pixelsInEntireSection / pixelsToMove;
+    return pixelsToEndOfSectionWithDirection / pixelsInEachCircleShift + offset;
+}
 
-  })
+window.addEventListener("DOMContentLoaded", function () {
 
-  $('.close-modal').on('click', function () {
+    // About section JS
 
-    id = $(this).closest('.selected-circle').attr('id')
-    about_modal_shown = false;
+    let about_modal_shown = false;
 
-    $('#' + id).removeClass('selected-circle')
-    // Remove all the others
-    $('.about-circle:not(.selected-circle)').removeClass('hidden-circle')
+    $(".about-circle").flip({
+        trigger: "manual"
+    });
 
-    $('.about-info-item').css('display', 'none')
-    $('.open-modal').css('display', 'block')
+    $(".about-circle").mouseover(function (el) {
+        if (!about_modal_shown) {
+            $("#" + el.currentTarget.id).flip(true);
+        }
+    });
 
-  })
+    $(".about-circle").mouseout(function (el) {
+        if (!about_modal_shown) {
+            $("#" + el.currentTarget.id).flip(false);
+        }
+    });
 
-  // Nav Bar JS
+    $(".open-modal").click(function (el) {
+        const id = el.currentTarget.closest(".about-circle").attr("id");
+        about_modal_shown = true;
 
-  $('.home_link').on('click', function () {
+        document.querySelector("#about").scrollIntoView({
+            behavior: "smooth"
+        });
 
-    if(about_modal_shown){
-      return false;
-    }
+        $("#" + id).addClass("selected-circle");
+        $(".about-circle:not(.selected-circle)").addClass("hidden-circle");
 
-    setupHomePage()
+        $(".about-info-item").css("display", "block");
+        $(".open-modal").css("display", "none");
+    });
 
-    $('#bottom-circle').css('left', '60%');
-    $('#top-circle').css('left', '-10%');
+    $(".close-modal").on("click", function (el) {
 
+        const id = el.currentTarget.closest(".selected-circle").attr("id");
+        about_modal_shown = false;
 
-  })
+        $("#" + id).removeClass("selected-circle");
+        $(".about-circle:not(.selected-circle)").removeClass("hidden-circle");
 
-  $('.about_link').on('click', function () {
+        $(".about-info-item").css("display", "none");
+        $(".open-modal").css("display", "block");
 
-    setupAboutPage()
+    });
 
-    $('#bottom-circle').css('left', '-10%');
-    $('#top-circle').css('left', '60%');
+    // Nav Bar JS
 
-  })
+    $(".home_link").on("click", function () {
 
-  $('.services_link').on('click', function () {
+        if (about_modal_shown) {
+            return false;
+        }
 
-    if(about_modal_shown){
-      return false;
-    }
+        setupHomePage();
 
-    setupServicesPage()
+        $("#bottom-circle").css("left", "60%");
+        $("#top-circle").css("left", "-10%");
 
-    $('#bottom-circle').css('left', '110%');
-    $('#top-circle').css('left', '-10%');
+    });
 
-  });
+    $(".about_link").on("click", function () {
 
-  $('.contact_link').on('click', function () {
+        setupAboutPage();
 
-    if(about_modal_shown){
-      return false;
-    }
-    
-    setupContactPage()
+        $("#bottom-circle").css("left", "-10%");
+        $("#top-circle").css("left", "60%");
 
-    $('#bottom-circle').css('left', '60%');
-    $('#top-circle').css('left', '-10%');
+    });
 
-  })
+    $(".services_link").on("click", function () {
 
-})
+        if (about_modal_shown) {
+            return false;
+        }
 
-// TODO: Are these the correct heights  that the page changes size based on content?
+        setupServicesPage();
 
-$(window).scroll(function () {
+        $("#bottom-circle").css("left", "110%");
+        $("#top-circle").css("left", "-10%");
 
-  const height = Math.max(document.body.scrollHeight,
-                        document.body.offsetHeight,
-                        document.documentElement.clientHeight,
-                        document.documentElement.scrollHeight,
-                        document.documentElement.offsetHeight);
+    });
 
-  if ($(this).scrollTop() < height*0.245) {
-    setupHomePage()
-    
-    let topCirclePosition = moveCircle(0, height*0.25, 70, $(this).scrollTop(), -10, 1)
-    $('#top-circle').css('left', topCirclePosition + '%');
+    $(".contact_link").on("click", function () {
 
-    let bottomCirclePosition = moveCircle(0, height*0.25, 70, $(this).scrollTop(), 60, -1)
-    $('#bottom-circle').css('left', bottomCirclePosition + '%');
-  }
-  else if ($(this).scrollTop() < height*0.495) {
-    setupAboutPage()
-    
-    let topCirclePosition = moveCircle(height*0.25, height*0.5, 70, $(this).scrollTop(), 60, -1)
-    $('#top-circle').css('left', topCirclePosition + '%');
+        if (about_modal_shown) {
+            return false;
+        }
 
-    let bottomCirclePosition = moveCircle(height*0.25, height*0.5, 120, $(this).scrollTop(), -10, 1)
-    $('#bottom-circle').css('left', bottomCirclePosition + '%');
-  }
-  else if ($(this).scrollTop() < height*0.745) {
-    setupServicesPage()
+        setupContactPage();
 
-    let bottomCirclePosition = moveCircle(height*0.5, height*0.75, 50, $(this).scrollTop(), 110, -1)
-    $('#bottom-circle').css('left', bottomCirclePosition + '%');
+        $("#bottom-circle").css("left", "60%");
+        $("#top-circle").css("left", "-10%");
 
-  }
-  else if ($(this).scrollTop() >= height*0.745) {
-    setupContactPage()
-  }
+    });
 
+    const scrollTop = document.documentElement.scrollTop;
+    const homeElement = document.getElementById("home");
+    const aboutElement = document.getElementById("about");
+    const servicesElement = document.getElementById("services");
+    const contactElement = document.getElementById("contact");
+
+    const homePageY = homeElement.getBoundingClientRect().y + scrollTop;
+    const aboutPageY = aboutElement.getBoundingClientRect().y + scrollTop;
+    const servicesPageY = servicesElement.getBoundingClientRect().y + scrollTop;
+    const contactPageY = contactElement.getBoundingClientRect().y + scrollTop;
+
+    $(window).scroll(function () {
+        if (document.documentElement.scrollTop > contactPageY) {
+            setupContactPage();
+        } else if (document.documentElement.scrollTop > servicesPageY) {
+            setupServicesPage();
+
+            $("#bottom-circle").css("left", moveCircle(
+                servicesPageY,
+                contactPageY,
+                50,
+                document.documentElement.scrollTop,
+                110,
+                -1
+            ) + "%");
+        } else if (document.documentElement.scrollTop > aboutPageY) {
+            setupAboutPage();
+
+            $("#top-circle").css("left", moveCircle(
+                aboutPageY,
+                servicesPageY,
+                70,
+                document.documentElement.scrollTop,
+                60,
+                -1
+            ) + "%");
+
+            $("#bottom-circle").css("left", moveCircle(
+                aboutPageY,
+                servicesPageY,
+                120,
+                document.documentElement.scrollTop,
+                -10,
+                1
+            ) + "%");
+        } else if (document.documentElement.scrollTop > homePageY) {
+            setupHomePage();
+
+            $("#top-circle").css("left", moveCircle(
+                homePageY,
+                aboutPageY,
+                70,
+                document.documentElement.scrollTop,
+                -10,
+                1
+            ) + "%");
+
+            $("#bottom-circle").css("left", moveCircle(
+                homePageY,
+                aboutPageY,
+                70,
+                document.documentElement.scrollTop,
+                60,
+                -1
+            ) + "%");
+        }
+    });
 });
-
-function setupHomePage(){
-  changeColor("header", "beige");
-  changeColor("#bottom-circle", "yellow");
-  changeColor("#top-circle", "yellow");
-  changeColor("body", "pink");
-}
-
-function setupAboutPage(){
-  changeColor("header", "pink");
-  changeColor("#bottom-circle", "yellow");
-  changeColor("#top-circle", "beige");
-  changeColor("body", "blue");
-}
-
-function setupServicesPage(){
-  changeColor("header", "yellow");
-  changeColor("#bottom-circle", "yellow");
-  changeColor("#top-circle", "pink");
-  changeColor("body", "beige");
-  
-}
-
-function setupContactPage(){
-  changeColor("header", "blue");
-  changeColor("#bottom-circle", "pink");
-  changeColor("#top-circle", "beige");
-  changeColor("body", "yellow");
-}
-
-function changeColor(element, colour) {
-  const colours = ["beige", "yellow", "blue", "pink"]
-  
-  $(element).addClass(colour)
-  
-  for (c of colours.filter(c => c != colour)) {
-    $(element).removeClass(c)
-  }
-  
-}
-
-function moveCircle(lowestScroll, maxScroll, pixelsToMove, currentScroll,  offset, multiplier){
-  let numberOfPixelsInEachMovementOfCircle = ((maxScroll-lowestScroll)/pixelsToMove)
-  return ((currentScroll-lowestScroll)*multiplier)/numberOfPixelsInEachMovementOfCircle + offset
-}
