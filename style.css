@@ -358,6 +358,14 @@ a {
     padding: 0;
     width: 80vw;
   }
+  nav {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .nav_separator {
+    display: block;
+  }
 }
 
 @media (max-width: 420px){
