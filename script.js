@@ -1,9 +1,9 @@
 function changeColor(element, color) {
     const colors = ["beige", "yellow", "blue", "pink"];
 
-    $(element).addClass(color);
-
-    colors.filter((c) => c !== color).forEach((c) => $(element).removeClass(c));
+    // $(element).addClass(color);
+    // 
+    // colors.filter((c) => c !== color).forEach((c) => $(element).removeClass(c));
 }
 
 function setupHomePage() {
@@ -73,7 +73,7 @@ window.addEventListener("DOMContentLoaded", function () {
     });
 
     $(".open-modal").click(function (el) {
-        const id = el.currentTarget.closest(".about-circle").attr("id");
+        const id = el.currentTarget.closest(".about-circle").id;
         about_modal_shown = true;
 
         document.querySelector("#about").scrollIntoView({
@@ -89,7 +89,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
     $(".close-modal").on("click", function (el) {
 
-        const id = el.currentTarget.closest(".selected-circle").attr("id");
+        const id = el.currentTarget.closest(".about-circle").id;
         about_modal_shown = false;
 
         $("#" + id).removeClass("selected-circle");

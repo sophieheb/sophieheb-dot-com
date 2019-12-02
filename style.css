@@ -3,8 +3,8 @@ html {
 }
 
 body {
-  background-color: #FDDEDC;
-  color: white;
+  /* background-color: #FDDEDC; */
+  /* color: white; */
   font-family: 'News Cycle', sans-serif;
   margin: 0;
 }
@@ -17,6 +17,7 @@ body {
 header {
   align-items: center;
   background-color: #E8BF94;
+  color: white;
   display: flex;
   justify-content: space-between;
   padding: 30px 2em;
@@ -81,10 +82,17 @@ article {
 }
 
 h1, h2 {
-  font-size: 48px;
   margin: 0;
   text-align: center;
   z-index: 1;
+}
+
+h1  {
+  font-size: 58px;
+}
+
+h2 {
+  font-size: 36px;
 }
 
 p {
@@ -314,7 +322,7 @@ a {
 
 /* Mobile stylings */
 
-@media (max-width:320px){
+@media (max-width:375px){
   main {
     min-height: 0;
   }
