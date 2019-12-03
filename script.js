@@ -150,18 +150,34 @@ window.addEventListener("DOMContentLoaded", function () {
 
     });
 
+    function setScrollSizes() {
+      const scrollTop = document.documentElement.scrollTop;
+      const homeElement = document.getElementById("home");
+      const aboutElement = document.getElementById("about");
+      const servicesElement = document.getElementById("services");
+      const contactElement = document.getElementById("contact");
+
+      window.homePageY = homeElement.getBoundingClientRect().y + scrollTop;
+      window.aboutPageY = aboutElement.getBoundingClientRect().y + scrollTop;
+      window.servicesPageY = servicesElement.getBoundingClientRect().y + scrollTop;
+      window.contactPageY = contactElement.getBoundingClientRect().y + scrollTop;
+    }
+
+    window.addEventListener('resize', () => setScrollSizes());
+    
     const scrollTop = document.documentElement.scrollTop;
     const homeElement = document.getElementById("home");
     const aboutElement = document.getElementById("about");
     const servicesElement = document.getElementById("services");
     const contactElement = document.getElementById("contact");
-
-    const homePageY = homeElement.getBoundingClientRect().y + scrollTop;
-    const aboutPageY = aboutElement.getBoundingClientRect().y + scrollTop;
-    const servicesPageY = servicesElement.getBoundingClientRect().y + scrollTop;
-    const contactPageY = contactElement.getBoundingClientRect().y + scrollTop;
+    
+    let homePageY = homeElement.getBoundingClientRect().y + scrollTop;
+    let aboutPageY = aboutElement.getBoundingClientRect().y + scrollTop;
+    let servicesPageY = servicesElement.getBoundingClientRect().y + scrollTop;
+    let contactPageY = contactElement.getBoundingClientRect().y + scrollTop;
 
     $(window).scroll(function () {
+        
         if (document.documentElement.scrollTop > contactPageY) {
             setupContactPage();
         } else if (document.documentElement.scrollTop > servicesPageY) {
