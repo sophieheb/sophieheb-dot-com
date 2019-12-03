@@ -350,19 +350,10 @@ a {
   .services-main-specific {
     width: 100%;
   }
-  .contact-main {
-    flex-direction: column;
-  }
-  .contact-main p {
-    font-size: 28px;
-    padding: 0;
-    width: 80vw;
-  }
   nav {
     display: flex;
     flex-direction: row;
   }
-  
   .nav_separator {
     display: block;
   }
@@ -390,5 +381,16 @@ a {
   
   .job-title, .company-name {
     font-size: 18px;
+  }
+  
+  .contact-main {
+    flex-direction: column;
+  }
+  
+  .contact-main p {
+    font-size: 28px;
+    padding: 0;
+    text-align: center;
+    width: 80vw;
   }
 }
