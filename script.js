@@ -1,40 +1,3 @@
-function changeColor(element, color) {
-    const colors = ["beige", "yellow", "blue", "pink"];
-
-    // $(element).addClass(color);
-    // 
-    // colors.filter((c) => c !== color).forEach((c) => $(element).removeClass(c));
-}
-
-function setupHomePage() {
-    changeColor("header", "beige");
-    changeColor("#bottom-circle", "yellow");
-    changeColor("#top-circle", "yellow");
-    changeColor("body", "pink");
-}
-
-function setupAboutPage() {
-    changeColor("header", "pink");
-    changeColor("#bottom-circle", "yellow");
-    changeColor("#top-circle", "beige");
-    changeColor("body", "blue");
-}
-
-function setupServicesPage() {
-    changeColor("header", "yellow");
-    changeColor("#bottom-circle", "yellow");
-    changeColor("#top-circle", "pink");
-    changeColor("body", "beige");
-
-}
-
-function setupContactPage() {
-    changeColor("header", "blue");
-    changeColor("#bottom-circle", "pink");
-    changeColor("#top-circle", "beige");
-    changeColor("body", "yellow");
-}
-
 function moveCircle(
     lowestScroll,
     maxScroll,
@@ -108,16 +71,12 @@ window.addEventListener("DOMContentLoaded", function () {
             return false;
         }
 
-        setupHomePage();
-
         $("#bottom-circle").css("left", "60%");
         $("#top-circle").css("left", "-10%");
 
     });
 
     $(".about_link").on("click", function () {
-
-        setupAboutPage();
 
         $("#bottom-circle").css("left", "-10%");
         $("#top-circle").css("left", "60%");
@@ -130,8 +89,6 @@ window.addEventListener("DOMContentLoaded", function () {
             return false;
         }
 
-        setupServicesPage();
-
         $("#bottom-circle").css("left", "110%");
         $("#top-circle").css("left", "-10%");
 
@@ -142,8 +99,6 @@ window.addEventListener("DOMContentLoaded", function () {
         if (about_modal_shown) {
             return false;
         }
-
-        setupContactPage();
 
         $("#bottom-circle").css("left", "60%");
         $("#top-circle").css("left", "-10%");
@@ -164,24 +119,23 @@ window.addEventListener("DOMContentLoaded", function () {
     }
 
     window.addEventListener('resize', () => setScrollSizes());
-    
+
     const scrollTop = document.documentElement.scrollTop;
     const homeElement = document.getElementById("home");
     const aboutElement = document.getElementById("about");
     const servicesElement = document.getElementById("services");
     const contactElement = document.getElementById("contact");
-    
+
     let homePageY = homeElement.getBoundingClientRect().y + scrollTop;
     let aboutPageY = aboutElement.getBoundingClientRect().y + scrollTop;
     let servicesPageY = servicesElement.getBoundingClientRect().y + scrollTop;
     let contactPageY = contactElement.getBoundingClientRect().y + scrollTop;
 
     $(window).scroll(function () {
-        
+
         if (document.documentElement.scrollTop > contactPageY) {
-            setupContactPage();
+
         } else if (document.documentElement.scrollTop > servicesPageY) {
-            setupServicesPage();
 
             $("#bottom-circle").css("left", moveCircle(
                 servicesPageY,
@@ -192,7 +146,6 @@ window.addEventListener("DOMContentLoaded", function () {
                 -1
             ) + "%");
         } else if (document.documentElement.scrollTop > aboutPageY) {
-            setupAboutPage();
 
             $("#top-circle").css("left", moveCircle(
                 aboutPageY,
@@ -212,7 +165,6 @@ window.addEventListener("DOMContentLoaded", function () {
                 1
             ) + "%");
         } else if (document.documentElement.scrollTop > homePageY) {
-            setupHomePage();
 
             $("#top-circle").css("left", moveCircle(
                 homePageY,
