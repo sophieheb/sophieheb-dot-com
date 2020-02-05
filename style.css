@@ -16,7 +16,6 @@ body {
 
 header {
   align-items: center;
-  background-color: #E8BF94;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -39,7 +38,7 @@ nav {
     display: flex;
     flex-direction: column;
   }
-  
+
   .nav_separator {
     display: none;
   }
@@ -56,7 +55,6 @@ figure {
 
 
 .top-circle {
-  background-color: #F5DB34;
   height: 33%;
   left: -5%;
   position: fixed;
@@ -65,7 +63,6 @@ figure {
 }
 
 .bottom-circle {
-  background-color: #F5DB34;
   bottom: -10%;
   height: 66%;
   position: fixed;
@@ -134,14 +131,10 @@ a {
   width: 25vh;
 }
 
-.home1 {
-  background-image: url('assets/img/speaking.jpeg');
+.home-image {
+  background-image: url('assets/img/home.jpg');
+  z-index: 2;
 }
-
-.home2 {
-  background-image: url('assets/img/speaking2.jpg');
-}
-
 .about-decoded-image {
   background-image: url('assets/img/about-decoded.png');
 }
@@ -162,14 +155,6 @@ a {
   background-image: url('assets/img/contact.jpg');
   height: 30vw;
   width: 30vw;
-  z-index: 2
-}
-
-.home-images {
-  align-items: center;
-  display: flex;
-  justify-content: space-around;
-  width: 60%;
   z-index: 2
 }
 
@@ -199,7 +184,7 @@ a {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}  
+}
 
 .about-info  {
   align-items: center;
@@ -240,7 +225,7 @@ a {
   align-self: flex-end;
   display: none;
   padding: 20px;
-} 
+}
 
 .open-modal {
   margin: 0;
@@ -338,9 +323,6 @@ a {
   .top-circle {
     width: 66%;
   }
-  .home-images {
-    display:none;
-  }
   .services-main {
     flex-direction: column;
   }
@@ -365,28 +347,28 @@ a {
     margin: 5vw;
     width: 65vw;
   }
-  
+
   .selected-circle {
     height: 100%;
   }
-  
+
   .about-info {
     padding: 0;
   }
-  
+
   .about-info p {
     font-size: 16px;
     padding: 0 20px;
   }
-  
+
   .job-title, .company-name {
     font-size: 18px;
   }
-  
+
   .contact-main {
     flex-direction: column;
   }
-  
+
   .contact-main p {
     font-size: 28px;
     padding: 0;
