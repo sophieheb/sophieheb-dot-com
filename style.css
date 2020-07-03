@@ -7,11 +7,40 @@ body {
   background-color: #FFFFFF;
 }
 
+p, a {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 32px;
+}
+
 /* Navigation */
 .hamburger{
   max-width: 42px;
   width: 25%;
   align-self: flex-end;
+}
+
+nav > a, p {
+  padding: 35px 20px 0px 20px;
+}
+
+.selected {
+  text-decoration: underline;
+}
+
+nav {
+  height: 0vh;
+  overflow: hidden;
+  width: 75%;
+  position: absolute;
+  z-index: 5;
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+    transition: 3s;
 }
 
 /* Header */
@@ -72,12 +101,9 @@ display:block; margin:0; padding:0; width:101%; height:101%;
     flex-grow: 1;
 }
 
+
+
 section > p {
-  font-family: 'Roboto Slab', serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 32px;
   color: #FFFFFF;
   width: 75%;
   margin: 0 auto;
@@ -93,7 +119,6 @@ footer {
 footer > p {
   width: 100%;
   font-family: 'PT Sans', sans-serif;
-  font-style: normal;
   font-weight: bold;
   font-size: 18px;
   line-height: 23px;
