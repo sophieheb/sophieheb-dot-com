@@ -47,15 +47,14 @@ nav {
 
 /* Header */
 header {
-  position: relative;
   width: 75%;
   margin: 32px auto;
+  position: relative;
 }
 
 h1 {
   font-family: 'PT Sans', sans-serif;
   z-index: 1;
-  position: relative;
   margin: 0 auto;
   font-weight: bold;
   font-style: normal;
@@ -65,16 +64,17 @@ h1 {
 .page-title {
   margin: 0;
   font-size: 36px;
-
+  display: inline-block;
+  position: relative;
 }
 
 .header-underline {
   height: 24px;
-  width: 75%;
-  bottom: 0;
-  position: absolute;
-  right: 0;
   z-index: 0;
+  width: 0;
+  position: absolute;
+  bottom: 0;
+  transition: 1s;
 }
 .main-image {
   margin: 0 auto;
@@ -177,7 +177,6 @@ ul {
   margin: 0 auto;
   margin-bottom: 32px;
   list-style: circle;
-
 }
 
 li {
