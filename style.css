@@ -1,8 +1,11 @@
-/* Document */
 body {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  margin: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   min-height: 100vh;
   background-color: #FFFFFF;
   color: #FFFFFF;
@@ -20,11 +23,12 @@ p, a {
 .hamburger{
   max-width: 42px;
   width: 25%;
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 nav > a, nav > p {
-  padding: 35px 20px 0px 20px;
+  padding: 35px 20px 0 20px;
   text-decoration: none;
 }
 
@@ -33,16 +37,44 @@ nav > a, nav > p {
 }
 
 nav {
-  height: 0vh;
+  height: 0;
   overflow: hidden;
   width: 75%;
   position: absolute;
   z-index: 5;
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
   transition: 1s;
+}
+
+.navContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+nav {
+  top: 0;
+}
+
+.nav-svg {
+  -webkit-filter: invert(17%) sepia(80%) saturate(889%) hue-rotate(206deg) brightness(99%) contrast(93%);
+          filter: invert(17%) sepia(80%) saturate(889%) hue-rotate(206deg) brightness(99%) contrast(93%);
 }
 
 /* Header */
@@ -74,6 +106,8 @@ h1 {
   width: 0;
   position: absolute;
   bottom: 0;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
   transition: 1s;
 }
 .main-image {
@@ -94,27 +128,51 @@ h1 {
 /* body */
 
 .main {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  flex-grow: 4;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 4;
+      -ms-flex-positive: 4;
+          flex-grow: 4;
 
 }
-
-.main > img {
-  object-fit:cover;
-  display:block; 
-  margin:0; 
-  padding:0; 
-  width:101%; 
-  height:101%;
+.projects {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+      -ms-flex-direction:column;
+          flex-direction:column;
 }
 
-.wave {
+.horizontalWave {
   width:100%;
+  display:block;
+  top: 10px;
+  position: relative;
 }
 
-.main > section {
-    flex-grow: 1;
+.verticalWave {
+  display:none;
+  left: 10px;
+  position: relative;
+}
+
+.blurb {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .main-text {
@@ -130,8 +188,13 @@ section > p {
   width: 75%;
   margin: 0 auto;
   margin-bottom: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .project > p {
@@ -151,13 +214,14 @@ h2 {
   font-weight: normal;
   font-size: 24px;
   line-height: 32px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .visit-button {
   font-size: 16px;
   line-height: 21px;
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   border: none;
   font-family: 'PT Sans', sans-serif;
   padding: 2px 4px;
@@ -190,15 +254,34 @@ li {
 /* footer */
 footer {
   padding: 24px 18px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
-footer > p {
+footer > section {
+  width: 100%;
+}
+
+footer > section > p {
   width: 100%;
   font-family: 'PT Sans', sans-serif;
   font-weight: bold;
   font-size: 18px;
   line-height: 23px;
   margin: 0;
+}
+
+.social-icon{
+  height:23px;
+  width: 23px;
+  float: right;
+  padding: 5px;
+}
+
+.copyright{
+  font-size: 12px;
 }
 
 /* Colours */
@@ -208,7 +291,8 @@ footer > p {
 }
 
 .blue-svg-background {
-  filter: invert(17%) sepia(80%) saturate(889%) hue-rotate(206deg) brightness(99%) contrast(93%);
+  -webkit-filter: invert(17%) sepia(80%) saturate(889%) hue-rotate(206deg) brightness(99%) contrast(93%);
+          filter: invert(17%) sepia(80%) saturate(889%) hue-rotate(206deg) brightness(99%) contrast(93%);
 }
 
 .blue-background {
@@ -224,7 +308,8 @@ footer > p {
 }
 
 .purple-svg-background {
-  filter: invert(52%) sepia(60%) saturate(2634%) hue-rotate(209deg) brightness(105%) contrast(99%);
+  -webkit-filter: invert(52%) sepia(60%) saturate(2634%) hue-rotate(209deg) brightness(105%) contrast(99%);
+          filter: invert(52%) sepia(60%) saturate(2634%) hue-rotate(209deg) brightness(105%) contrast(99%);
 }
 
 .yellow-background {
@@ -232,7 +317,8 @@ footer > p {
 }
 
 .yellow-svg-background {
-  filter: invert(86%) sepia(23%) saturate(584%) hue-rotate(345deg) brightness(107%) contrast(101%);
+  -webkit-filter: invert(86%) sepia(23%) saturate(584%) hue-rotate(345deg) brightness(107%) contrast(101%);
+          filter: invert(86%) sepia(23%) saturate(584%) hue-rotate(345deg) brightness(107%) contrast(101%);
 }
 
 .peach-background {
@@ -240,7 +326,13 @@ footer > p {
 }
 
 .peach-svg-background {
-  filter: invert(94%) sepia(4%) saturate(3129%) hue-rotate(308deg) brightness(103%) contrast(114%);
+  -webkit-filter: invert(94%) sepia(4%) saturate(3129%) hue-rotate(308deg) brightness(103%) contrast(114%);
+          filter: invert(94%) sepia(4%) saturate(3129%) hue-rotate(308deg) brightness(103%) contrast(114%);
+}
+
+.white-svg-background {
+  -webkit-filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(327deg) brightness(104%) contrast(102%);
+          filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(327deg) brightness(104%) contrast(102%);
 }
 
 .lilac-background {
