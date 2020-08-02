@@ -2,6 +2,9 @@
 <html lang="en">
   <head>
     <title>Sophie Hebdidge</title>
+    <link rel="icon" 
+      type="image/png" 
+      href="assets/img/favicon.ico">
 
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
@@ -9,7 +12,6 @@
     <meta name="author" content="Sophie Hebdidge - Freelance Developer">
     <meta name="description" content="Sophie Hebdidge is a developer and technical educator. She works freelance to build websites and apps using technologies React Native and Ruby on Rails.">
 
-    <link rel = "icon" type = "image/png" href = "assets/img/icon.png">
     <meta property="og:description" content="Sophie Hebdidge is a developer and technical educator. She works freelance to build websites and apps using technologies React Native and Ruby on Rails.">
     <meta property="og:title" content="Sophie Hebdidge - Freelance Developer">
     <meta name="twitter:title" content="Sophie Hebdidge - Freelance Developer">
@@ -17,34 +19,47 @@
     <script type="text/javascript" src="script.js"></script>
 
     <link href="style.css" rel="stylesheet" />
+    <link href="responsive-style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Roboto+Slab:wght@300;400&display=swap" rel="stylesheet">
 
   </head>
   <body>
-    <img src="assets/img/menu-outline.svg" class="hamburger blue-svg-background" id="nav-open"/>
-    <nav class="pink-background" id="nav-bar">
-      <img src="assets/img/close-outline.svg" class="hamburger blue-svg-background" id="nav-close"/>
-      <a class="blue-text selected">Home</a>
-      <a class="blue-text" href="/mentoring">Mentoring</a>
-      <a class="blue-text" href="/software-development">Software Development</a>
-      <a class="blue-text" href="/speaking"> Speaking </a>
-      <p class="blue-text">Get in touch hello@sophieheb.com</p>
-    </nav>
-    <header>
-      <h1 class="blue-text page-title">Sophie Hebdidge</h1>
-      <div class="header-underline pink-background"></div>
-    </header>
-    <img src="assets/img/homepage.svg" class="main-image" />
+    <section class="navContainer">
+      <img src="assets/img/menu-outline.svg" class="hamburger nav-svg" id="nav-open"/>
+      <nav class="pink-background" id="nav-bar">
+        <img src="assets/img/close-outline.svg" class="hamburger nav-svg" id="nav-close"/>
+        <a class="blue-text selected">Home</a>
+        <a class="blue-text" href="/mentoring">Mentoring</a>
+        <a class="blue-text" href="/software-development">Software Development</a>
+        <a class="blue-text" href="/speaking"> Speaking </a>
+        <a class="blue-text" href="https://techniclarity.co" target="_blank">Techniclarity</a>
+        <p class="blue-text">Get in touch hello@sophieheb.com</p>
+      </nav>
+    </section>
+    <section class="title">
+      <header>
+        <h1 class="blue-text page-title">Sophie Hebdidge</h1>
+        <div class="header-underline pink-background"></div>
+      </header>
+      <img src="assets/img/homepage.svg" class="main-image" />
+    </section>
     <main class="main">
-      <img src="assets/img/wave.svg" class="blue-svg-background wave"/>
-      <section class="blue-background">
+      <img src="assets/img/horizontal-wave.svg" class="blue-svg-background horizontalWave"/>
+      <img src="assets/img/vertical-wave.svg" class="blue-svg-background verticalWave"/>
+      <section class="blue-background blurb">
         <p class="main-text">Supporting women to create and understand technology so that they can live their dream career.</p>
       </section>
     </main>
     <footer class="pink-background">
+      <section>
       <p class="blue-text"> hello@sophieheb.com </p>
-      <p class="blue-text">© Sophie Heb LTD </p>
+      <p class="blue-text copyright">© Sophie Heb LTD </p>
+    </section>
+      <section>
+      <img class="social-icon blue-svg-background" src="./assets/img/github.svg">
+      <img class="social-icon blue-svg-background" src="./assets/img/linkedin.svg">
+    </section>
     </footer>
 
   </body>
