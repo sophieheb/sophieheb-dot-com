@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <title>Sophie Hebdidge</title>
@@ -63,4 +63,97 @@
     </footer>
 
   </body>
+</html> -->
+
+<html>
+        <head>
+                <title>Quick levels mock-up for Sophie..</title>
+                <style>
+                        body {
+                                background: black;
+                        }
+
+                        .levels-wrapper {
+                                margin: 0 auto;
+                                margin-top: 50px;
+                                width: 100px;
+                                transform: rotateX(-180deg);
+                        }
+
+                        .levels-container {
+                                display: inline-block;
+                                margin: auto;
+                                width: 25px;
+                                height: 120px;
+                        }
+
+                        .levels {
+                                position: absolute;
+                                width: 25px;
+                                height: 100px;
+                                background: white;
+                        }
+
+                        #levels1 {
+                                animation: move1 2.4s infinite;
+                        }
+
+                        #levels2 {
+                                animation: move2 1.4s infinite;
+                        }
+
+                        #levels3 {
+                                animation: move3 2s infinite;
+                        }
+
+                        @keyframes move1 {
+                                0% {
+                                        height: 100px;
+                                }
+                                60% {
+                                        height: 20px;
+                                }
+                                100% {
+                                        height: 100px;
+                                }
+                        }
+
+                        @keyframes move2 {
+                                0% {
+                                        height: 84px;
+                                }
+                                50% {
+                                        height: 10px;
+                                }
+                                100% {
+                                        height: 84px;
+                                }
+                        }
+
+                        @keyframes move3 {
+                                0% {
+                                        height: 97px;
+                                }
+                                50% {
+                                        height: 1px;
+                                }
+                                100% {
+                                        height: 97px;
+                                }
+                        }
+                </style>
+        </head>
+        <body>
+                <div class="levels-wrapper">
+                        <div class="levels-container">
+                                <div class="levels" id="levels1"></div>
+                        </div>
+                        <div class="levels-container">
+                                <div class="levels" id="levels2"></div>
+                        </div>
+                        <div class="levels-container">
+                                <div class="levels" id="levels3"></div>
+                        </div>
+                </div>
+        </body>
 </html>
