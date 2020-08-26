@@ -1,7 +1,10 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <title>Sophie Hebdidge</title>
+    <link rel="icon" 
+      type="image/png" 
+      href="assets/img/favicon.ico">
 
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
@@ -9,199 +12,148 @@
     <meta name="author" content="Sophie Hebdidge - Freelance Developer">
     <meta name="description" content="Sophie Hebdidge is a developer and technical educator. She works freelance to build websites and apps using technologies React Native and Ruby on Rails.">
 
-    <link rel = "icon" type = "image/png" href = "assets/img/icon.png">
-
-    <meta property="og:image" content="assets/img/contact.jpg">
     <meta property="og:description" content="Sophie Hebdidge is a developer and technical educator. She works freelance to build websites and apps using technologies React Native and Ruby on Rails.">
     <meta property="og:title" content="Sophie Hebdidge - Freelance Developer">
     <meta name="twitter:title" content="Sophie Hebdidge - Freelance Developer">
 
-    <link href="style.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=News+Cycle&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="script.js"></script>
 
-    <script src="https://kit.fontawesome.com/6c6026efe8.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
-    <script src="script.js"></script>
+    <link href="style.css" rel="stylesheet" />
+    <link href="responsive-style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Roboto+Slab:wght@300;400&display=swap" rel="stylesheet">
 
   </head>
   <body>
-    <!-- Two Circles -->
-    <figure id="top-circle" class="top-circle beige"></figure>
-    <figure id="bottom-circle" class="bottom-circle beige"></figure>
-
-    <!-- Home Page -->
-    <section class="page">
-      <a id="home" class="smooth"></a>
-      <header class="blue">
-        <h1 class="page-title">Sophie Hebdidge</h1>
-        <nav>
-            <p> <a class="about_link" href="#about">ABOUT</a></p>
-            <p class='nav_separator'> | </p>
-            <p> <a class="services_link" href="#services">SERVICES</a></p>
-            <p class='nav_separator'> | </p>
-            <p> <a class="contact_link" href="#contact">CONTACT</a> </p>
-        </nav>
-      </header>
-      <article>
-        <figure class="image home-image"></figure>
-        <h2>DEVELOPER || EDUCATOR || MENTOR</h2>
-        <p> I'm a freelance, fullstack developer, with experience in app & web development as well as python backend systems. When I'm not developing, I spend time inspiring individuals and companies about the power of code and data in my capacity as an educator and a mentor.</p>
-      </article>
+    <section class="navContainer">
+      <img src="assets/img/menu-outline.svg" class="hamburger nav-svg" id="nav-open"/>
+      <nav class="pink-background" id="nav-bar">
+        <img src="assets/img/close-outline.svg" class="hamburger nav-svg" id="nav-close"/>
+        <a class="blue-text selected">Home</a>
+        <a class="blue-text" href="/mentoring">Mentoring</a>
+        <a class="blue-text" href="/software-development">Software Development</a>
+        <a class="blue-text" href="/speaking"> Speaking </a>
+        <a class="blue-text" href="https://techniclarity.co" target="_blank">Techniclarity</a>
+        <p class="blue-text">Get in touch hello@sophieheb.com</p>
+      </nav>
     </section>
-
-    <!-- About Page -->
-    <section class="page">
-      <a id="about" class="smooth"></a>
-      <header class="blue">
-        <nav>
-            <p> <a class='home_link' href="#home">HOME</a> </p>
-            <p class='nav_separator'> | </p>
-            <p> <a class="services_link" href="#services">SERVICES</a></p>
-            <p class='nav_separator'> | </p>
-            <p> <a class="contact_link" href="#contact">CONTACT</a> </p>
-        </nav>
-        <h1 class="page-title">About Me</h1>
+    <section class="title">
+      <header>
+        <h1 class="blue-text page-title">Sophie Hebdidge</h1>
+        <div class="header-underline pink-background"></div>
       </header>
-      <article class="about-main">
-          <h2 class='hidden-header'>About Sophie</h2>
-          <section class="about-circle" id="about-pkt">
-            <h2 class='hidden-header'>CTO & Co-founder, Project Kitchen Table </h2>
-            <figure class="front about-pkt-image"></figure>
-            <figure class="back">
-              <section class="about-info">
-                <span class="close-modal about-info-item">
-                  <i class="fas fa-times fa-2x"></i>
-                </span>
-                <h3 class="company-name about-info-item">Project Kitchen Table</h3>
-                <h2 class="job-title">CTO & Co-founder</h2>
-                <p class="open-modal"><a href="#about">See more</a></p>
-                <p class="tech-stack about-info-item">React Native, Amazon Alexa, AWS, Firebase</p>
-                <p class="description about-info-item">A voicebot to equip teenage girls with the confidence they need to manage their own mental health.</p>
-                <a href="projectkitchentable.io" target="_blank" class="external-link about-info-item"><p>Visit the website <i class="fas fa-angle-double-right"></i></p></a>
-              </section>
-            </figure>
-          </section>
-          <section class="about-circle" id="about-decoded">
-            <h2 class='hidden-header'>Facilitator, Decoded</h2>
-            <figure class="about-decoded-image front"></figure>
-            <figure class="back">
-              <section class="about-info">
-                <span class="close-modal about-info-item">
-                  <i class="fas fa-times fa-3x"></i>
-                </span>
-                <h3 class="company-name about-info-item">Decoded</h3>
-                <h2 class="job-title">Facilitator</h2>
-                <p class="open-modal"><a href="#about">See more</a></p>
-                <p class="tech-stack about-info-item">Python, Jupyter Notebooks, HTML, CSS, Javascript</p>
-                <p class="description about-info-item">For over three years I have travelled the world delivering world class educational experiences. These workshops equipped senior leaders with the knowledge they need to make informed digital decisions for their business and their employees with the skills to upgrade their careers with data science.</p>
-                <a href="decoded.com" target="_blank" class="external-link about-info-item"><p>Visit the website <i class="fas fa-angle-double-right"></i></p></a>
-              </section>
-            </figure>
-          </section>
-          <section class="about-circle" id="about-flatiron">
-            <h2 class='hidden-header'>Instructor, Flatiron School</h2>
-            <figure class="front about-flatiron-image"></figure>
-            <figure class="back">
-              <section class="about-info">
-                <span class="close-modal about-info-item">
-                  <i class="fas fa-times fa-3x"></i>
-                </span>
-                <h3 class="company-name about-info-item">Flatiron School</h3>
-                <h2 class="job-title">Instructor</h2>
-                <p class="open-modal"><a href="#about">See more</a></p>
-                <p class="tech-stack about-info-item">HTML, CSS, Javascript</p>
-                <p class="description about-info-item">I taught two ten week evening courses to equip individuals with the fundamental skills they require to become frontend web developers.</p>
-                <a href="flatironschool.com" target="_blank" class="external-link about-info-item"><p>Visit the website <i class="fas fa-angle-double-right"></i></p></a>
-              </section>
-            </figure>
-          </section>
-          <section class="about-circle" id="about-hacksy">
-            <h2 class='hidden-header'>Developer, Hacksy</h2>
-            <figure class="front about-hacksy-image"></figure>
-            <figure class="back">
-              <section class="about-info">
-                <span class="close-modal about-info-item">
-                  <i class="fas fa-times fa-3x"></i>
-                </span>
-                <h3 class="company-name about-info-item">Hacksy</h3>
-                <h2 class="job-title">Developer</h2>
-                <p class="open-modal"><a href="#about">See more</a></p>
-                <p class="tech-stack about-info-item">Ruby on Rails, Heroku, HTML, CSS, Javascript</p>
-                <p class="description about-info-item">Hacksy is friendly chatbot which answers the most common questions in cyber security.</p>
-                <a href="https://www.producthunt.com/posts/hacksy-by-decoded" target="_blank" class="external-link about-info-item"><p>Visit the website <i class="fas fa-angle-double-right"></i></p></a>
-              </section>
-            </figure>
-          </section>
-          <section class="about-circle" id="about-speaking">
-            <h2 class='hidden-header'>Speaker, Freelance</h2>
-            <figure class="front about-speaking-image"></figure>
-            <figure class="back">
-              <section class="about-info">
-                <span class="close-modal about-info-item">
-                  <i class="fas fa-times fa-3x"></i>
-                </span>
-                <h3 class="company-name about-info-item">Freelance</h3>
-                <h2 class="job-title">Speaker</h2>
-                <p class="open-modal"><a href="#about">See more</a></p>
-                <p class="description about-info-item">I have been speaking at conferences and meetups since 2016 on a range of topics from data and chatbots to women in tech.</p>
-              </section>
-            </figure>
-          </section>
-      </article>
+      <img src="assets/img/homepage.svg" class="main-image" />
     </section>
-
-    <!-- Services Page -->
-    <section class="page">
-      <a id="services" class="smooth"></a>
-      <header class="blue">
-        <h1 class="page-title">Services</h1>
-        <nav>
-            <p><a class='home_link' href="#home">HOME</a></p>
-            <p class='nav_separator'> | </p>
-            <p> <a class="about_link" href="#about">ABOUT</a></p>
-            <p class='nav_separator'> | </p>
-            <p> <a class="contact_link" href="#contact">CONTACT</a> </p>
-        </nav>
-      </header>
-      <article class='services-main'>
-        <h2 class='hidden-header'>What I do</h2>
-        <section class='services-main-broad'>
-          <h2>What I do</h2>
-          <p>My sweet spot lies in broad technical knowledge paired with the ability to share this in simple terms. I aim to bolster the tech sector by providing services that help both businesses and individuals.</p>
-        </section>
-        <section class='services-main-specific'>
-          <h2>Development</h2>
-          <p>I build websites and apps for my clients to their design specifications. I consider scalability and work in an agile process ensuring your business is futureproof.</p>
-          <h2>Consultancy</h2>
-          <p>I coach early stage startup founding teams on the feasibility of their technology vision. Giving them actionable, trustworthy tech advice in plain English.</p>
-          <h2>Mentorship</h2>
-          <p>I offer mentorship to women working in technology, pulling on my varied experience. I aim to guide mentees and support them through early career hurdles.</p>
-        </section>
-      </article>
+    <main class="main">
+      <img src="assets/img/horizontal-wave.svg" class="blue-svg-background horizontalWave"/>
+      <img src="assets/img/vertical-wave.svg" class="blue-svg-background verticalWave"/>
+      <section class="blue-background blurb">
+        <p class="main-text">Supporting women to create and understand technology so that they can live their dream career.</p>
+      </section>
+    </main>
+    <footer class="pink-background">
+      <section>
+      <p class="blue-text"> hello@sophieheb.com </p>
+      <p class="blue-text copyright">© Sophie Heb LTD </p>
     </section>
-
-    <!-- Contact Page -->
-    <section class="page">
-      <a id="contact" class="smooth"></a>
-      <header class="blue">
-        <h1 class="page-title">Get in Touch</h1>
-        <nav>
-            <p> <a class='home_link' href="#home">HOME</a> </p>
-            <p class='nav_separator'> | </p>
-            <p> <a class="about_link" href="#about">ABOUT</a></p>
-            <p class='nav_separator'> | </p>
-            <p> <a class="services_link" href="#services">SERVICES</a> </p>
-        </nav>
-      </header>
-      <article class='contact-main'>
-        <h2 class='hidden-header'>Contact</h2>
-        <p>Drop me a message, I’d love to hear from you!</p>
-        <figure class="image contact-image"></figure>
-        <p>hello@sophieheb.com</p>
-      </article>
+      <section>
+      <img class="social-icon blue-svg-background" src="./assets/img/github.svg">
+      <img class="social-icon blue-svg-background" src="./assets/img/linkedin.svg">
     </section>
+    </footer>
 
   </body>
+</html> -->
+
+<html>
+        <head>
+                <title>Quick levels mock-up for Sophie..</title>
+                <style>
+                        body {
+                                background: black;
+                        }
+
+                        .levels-wrapper {
+                                margin: 0 auto;
+                                margin-top: 50px;
+                                width: 100px;
+                                transform: rotateX(-180deg);
+                        }
+
+                        .levels-container {
+                                display: inline-block;
+                                margin: auto;
+                                width: 25px;
+                                height: 120px;
+                        }
+
+                        .levels {
+                                position: absolute;
+                                width: 25px;
+                                height: 100px;
+                                background: white;
+                        }
+
+                        #levels1 {
+                                animation: move1 2.4s infinite;
+                        }
+
+                        #levels2 {
+                                animation: move2 1.4s infinite;
+                        }
+
+                        #levels3 {
+                                animation: move3 2s infinite;
+                        }
+
+                        @keyframes move1 {
+                                0% {
+                                        height: 100px;
+                                }
+                                60% {
+                                        height: 20px;
+                                }
+                                100% {
+                                        height: 100px;
+                                }
+                        }
+
+                        @keyframes move2 {
+                                0% {
+                                        height: 84px;
+                                }
+                                50% {
+                                        height: 10px;
+                                }
+                                100% {
+                                        height: 84px;
+                                }
+                        }
+
+                        @keyframes move3 {
+                                0% {
+                                        height: 97px;
+                                }
+                                50% {
+                                        height: 1px;
+                                }
+                                100% {
+                                        height: 97px;
+                                }
+                        }
+                </style>
+        </head>
+        <body>
+                <div class="levels-wrapper">
+                        <div class="levels-container">
+                                <div class="levels" id="levels1"></div>
+                        </div>
+                        <div class="levels-container">
+                                <div class="levels" id="levels2"></div>
+                        </div>
+                        <div class="levels-container">
+                                <div class="levels" id="levels3"></div>
+                        </div>
+                </div>
+        </body>
 </html>
